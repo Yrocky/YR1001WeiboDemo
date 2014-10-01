@@ -8,16 +8,10 @@
 
 #import "YRStatusFrame.h"
 #import "YRStatus.h"
+#import "YRUser.h"
 
-/**
- *  微博正文上面的一些设定
- *
- */
-#define kGarp 6.18
-#define kAvatarLargeWH 30
-#define kScreenNameHeight 20
-#define kContentH 15
-#define kTextW (320 - 2 * kGarp)
+
+
 /**
  *  转发评论和点赞按钮的尺寸
  *
@@ -26,18 +20,152 @@
 #define kButtonH 15
 /** 图片的大小*/
 #define kThumbnailPicWH 80
+
+
 @interface YRStatusFrame  ()
 @property (nonatomic ,assign) CGRect lastRect;
 @end
 
 @implementation YRStatusFrame
 
+/**  获得数据，进行frame的计算*/
 - (void)setStatus:(YRStatus *)status{
 
     _status = status;
+
+    // cell的宽度
+    CGFloat cellW = [[UIScreen mainScreen] bounds].size.width;
     
+    // 1. top视图的frame
+    CGFloat topX = 0;
+    CGFloat topY = 0;
+    CGFloat topW = cellW;
+    CGFloat topH = 0;// 这个待算
 
     
+    // 2. 头像
+    CGFloat iconX = kGarp;
+    CGFloat iconY = kGarp;
+    CGFloat iconW = kAvatarLargeWH;
+    CGFloat iconH = kAvatarLargeWH;
+    _iconViewF = CGRectMake(iconX, iconY, iconW, iconH);
+    
+    // 3. 姓名
+    CGFloat nameX = CGRectGetMaxX(_iconViewF) + kGarp;
+    CGFloat nameY = iconH;
+    CGFloat nameH = kScreenNameHeight;
+    CGSize nameSize = CGSizeMake(MAXFLOAT, nameH);
+    CGFloat nameW = [_status.user.name sizeWithFont:kScreenNameFont maxSize:nameSize].width;
+    _nameLabelF = CGRectMake(nameX, nameY, nameW, nameH);
+    
+    // 4. 会员图标
+    if (_status.user.mbtype) {
+        CGFloat vipX = CGRectGetMaxX(_nameLabelF) + kGarp;
+        CGFloat vipY = nameH;
+        CGFloat vipW = 14;
+        CGFloat vipH = nameH;
+        _vipViewF = CGRectMake(vipX, vipY, vipW, vipH);
+    }else{
+    
+    }
+    
+    // 5. 发送时间
+    CGFloat timeX = nameX;
+    CGFloat timeY = CGRectGetMaxY(_nameLabelF) + kGarp;
+    CGFloat timeH = kContentH;
+    CGSize timeSize = CGSizeMake(MAXFLOAT, timeH);
+    CGFloat timeW = [_status.created_at sizeWithFont:kCreatAndSourceFont maxSize:timeSize].width;
+    _timeLabelF = CGRectMake(timeX, timeY, timeW, timeH);
+    
+    // 6. 发送来源
+    CGFloat sourceX = CGRectGetMaxX(_timeLabelF) + kGarp;
+    CGFloat sourceY = timeY;
+    CGFloat sourceH = kContentH;
+    CGSize sourceSize = CGSizeMake(MAXFLOAT, sourceH);
+    CGFloat sourceW =[_status.source sizeWithFont:kCreatAndSourceFont maxSize:sourceSize].width;
+    _sourceLabelF = CGRectMake(sourceX, sourceY, sourceW, sourceH);
+    
+    // 7. 微博正文
+    CGFloat contentX = iconX;
+    CGFloat contentY = CGRectGetMaxY(_iconViewF) + kGarp;
+    CGFloat contentW = kTextW;
+    CGSize contentSize = CGSizeMake(contentW, MAXFLOAT);
+    CGFloat contentH = [_status.text sizeWithFont:kTextFont maxSize:contentSize].width;
+    _contentLabelF = CGRectMake(contentX, contentY, contentW, contentH);
+    
+    // 8. 微博图片
+    if (_status.thumbnail_pic) {
+        
+        CGFloat photoX = contentX;
+        CGFloat photoY = CGRectGetMaxY(_contentLabelF) + kGarp;
+        CGFloat photoWH = kThumbnailPicWH;
+        _photoViewF = CGRectMake(photoX, photoY, photoWH, photoWH);
+    }
+    
+    // 9. 转发微博
+    if (_status.retweeted_status) {
+        
+        // 10.转发微博的底部视图
+        CGFloat retweetedViewX = contentX;
+        CGFloat retweetedViewY = CGRectGetMaxY(_contentLabelF) + kGarp;
+        CGFloat retweetedViewW = contentW;
+        CGFloat retweetedViewH = 0;// 待算
+        _retweetViewF = CGRectMake(retweetedViewX, retweetedViewY, retweetedViewW, retweetedViewH);
+        
+        // 11. 转发微博的用户名称
+        CGFloat retweetNameX = contentX;
+        CGFloat retweetNameY = CGRectGetMaxY(_contentLabelF) + kGarp;
+        CGFloat retweetNameH = kScreenNameHeight;
+        CGSize retweetSize = CGSizeMake(MAXFLOAT, retweetNameH);
+        NSString *name = [NSString stringWithFormat:@"@%@",_status.retweeted_status.user.name];
+        CGFloat retweetNameW = [name sizeWithFont:kTextFont maxSize:retweetSize].width;
+        _retweetNameLabelF = CGRectMake(retweetNameX, retweetNameY, retweetNameW, retweetNameH);
+        
+        // 12. 转发微博的内容
+        CGFloat retweetContentX = retweetNameX;
+        CGFloat retweetContentY = CGRectGetMaxY(_retweetNameLabelF) + kGarp;
+        CGFloat retweetContentW = kTextW;
+        CGSize retweetContentSize = CGSizeMake(retweetContentW, MAXFLOAT);
+        CGFloat retweetContentH = [_status.retweeted_status.text sizeWithFont:kTextFont maxSize:retweetContentSize].height;
+        _retweetContentLabelF = CGRectMake(retweetContentX, retweetContentY, retweetContentW, retweetContentH);
+        
+        // 13. 转发微博的图片
+        if (_status.retweeted_status.thumbnail_pic) {
+            CGFloat retweetPhotoX = retweetContentX;
+            CGFloat retweetPhotoY = CGRectGetMaxY(_retweetContentLabelF) + kGarp;
+            CGFloat retweetPhotoWH = kThumbnailPicWH;
+            _retweetPhotoViewF = CGRectMake(retweetPhotoX, retweetPhotoY, retweetPhotoWH, retweetPhotoWH);
+            
+            retweetedViewY = CGRectGetMaxY(_retweetPhotoViewF) + kGarp;
+        }else{
+            
+            retweetedViewY = CGRectGetMaxY(_retweetContentLabelF) + kGarp;
+        }
+        
+        _retweetViewF = CGRectMake(retweetedViewX, retweetedViewY, retweetedViewW, retweetedViewH);
+        
+        topH = CGRectGetMaxY(_retweetViewF) + kGarp;
+        
+    }else{
+        if (!_status.thumbnail_pic) {
+            topH = CGRectGetMaxY(_contentLabelF) + kGarp;
+        }else{
+            topH = CGRectGetMaxY(_photoViewF) + kGarp;
+        }
+    }
+    
+    _topViewF = CGRectMake(topX, topY, topW, topH);
+    
+    // 14.底部按钮父视图
+    CGFloat statusToolbarX = 0;
+    CGFloat statusToolbarY = CGRectGetMaxY(_topViewF);
+    CGFloat statusToolbarW = cellW;
+    CGFloat statusToolbarH = 35;
+    _statusToolbarF = CGRectMake(statusToolbarX, statusToolbarY, statusToolbarW, statusToolbarH);
+    
+    _cellHeight = CGRectGetMaxY(_statusToolbarF) + kGarp;
+    
+
 }
 /*
 - (void) subViewsFrame{
@@ -155,4 +283,7 @@
     _cellHeight = CGRectGetMaxY(_attitudesFrame) + kGarp;
 }
 */
+
+
+
 @end

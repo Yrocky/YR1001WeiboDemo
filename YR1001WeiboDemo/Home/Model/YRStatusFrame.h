@@ -7,6 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+/**  微博正文上面的一些设定
+*
+*/
+#define kGarp 6.18
+#define kAvatarLargeWH 30
+#define kScreenNameHeight 20
+#define kContentH 15
+
+#define kTextW (320 - 2 * kGarp)
 
 @class YRStatus;
 
