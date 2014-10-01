@@ -18,6 +18,8 @@
         self.imageView.contentMode = UIViewContentModeRight;
         self.titleLabel.contentMode = UIViewContentModeLeft;
         self.titleLabel.font = kCreatAndSourceFont;
+        self.adjustsImageWhenHighlighted = NO;// 不要再高亮状态下调整图片样式
+//        self.titleEdgeInsets = UIEdgeInsetsMake(0, 100, 0, 0);
         [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     

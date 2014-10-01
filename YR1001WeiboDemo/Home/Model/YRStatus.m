@@ -16,4 +16,27 @@
 
 @implementation YRStatus
 
+// get方法
+- (NSString *)created_at{
+
+    return [NSString created_atStringWithStandardDateString:_created_at];
+}
+// set方法 这里是有写set方法和get方法都可以的，但是这两个方法只能写一个，
+-(void)setSource:(NSString *)source{
+
+    _source = source;//
+    NSDictionary *xmlDict = [NSDictionary dictionaryWithXMLString:_source];
+    
+    _source = [NSString stringWithFormat:@"来自:%@",[xmlDict valueForKey:XMLDictionaryTextKey]];
+}
+// get方法，这个方法会时时刻刻的调用，没有必要
+//- (NSString *)source{
+//
+//    
+//    int loc = [_source rangeOfString:@">"].location + 1;
+//    int length = [_source rangeOfString:@"</"].location - loc;
+//    return [NSString stringWithFormat:@"来自:%@",[_source substringWithRange:NSMakeRange(loc, length)]];
+//
+//}
+
 @end

@@ -14,4 +14,5 @@
 
 + (UIImageView *) popImageViewWithImageName:(NSString *)imageName frame:(CGRect)frame;
 
++ (UIImage *)imageWithName:(NSString *)imageName withTop:(CGFloat)top left:(CGFloat)left;
 @end

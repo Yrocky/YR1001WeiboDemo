@@ -43,8 +43,10 @@
 
 
 #define kCreatAndSourceFont [UIFont systemFontOfSize:11]
-#define kScreenNameFont [UIFont systemFontOfSize:15]
+#define kScreenNameFont [UIFont systemFontOfSize:14.5]
 
-#define kTextFont [UIFont systemFontOfSize:14]
+#define kTextFont [UIFont systemFontOfSize:13]
+
+#define YRColor(_R,_G,_B,_a) ([UIColor colorWithRed:(_R)/ 255.0 green:(_G) /255.0 blue:(_B) /255.0 alpha:(_a)])
 
 #endif

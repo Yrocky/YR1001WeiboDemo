@@ -17,7 +17,7 @@
     [dateFormatter setDateFormat:@"EE MMM dd HH:mm:ss ZZZ yyyy"];
     
     NSDate *dateFromString = [dateFormatter dateFromString:dateString];
-    
+    // 求现在是和传进来的时间的差值,是一个秒单位
     NSTimeInterval interval = [dateFromString timeIntervalSinceNow];
     
     int timeGap = abs((int)interval / 60);
@@ -27,6 +27,7 @@
     return timeGapString;
 }
 
+/*还可以实用日历类来进行判断*/
 /*
  
  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

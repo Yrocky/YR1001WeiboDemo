@@ -12,6 +12,8 @@
 #import "YRRCAButton.h"
 #import "YRUser.h"
 #import "UIImageView+WebCache.h"
+#import "YRStatusToolBar.h"
+
 
 @interface YRStatusCell ()
 
@@ -54,7 +56,12 @@
 
 
 /** 微博的工具条 */
-@property (nonatomic, weak) UIImageView *statusToolbar;
+@property (nonatomic, weak) YRStatusToolBar *statusToolbar;
+
+/** 底部的三个按钮*/
+@property (nonatomic, weak) YRRCAButton *rButton;
+@property (nonatomic, weak) YRRCAButton *cButton;
+@property (nonatomic, weak) YRRCAButton *aButton;
 
 @end
 
@@ -69,7 +76,6 @@
         
         cell = [[YRStatusCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
-    
     return cell;
 }
 
@@ -92,9 +98,13 @@
 
 - (void) setOriginStatus{
 
+//    self.selectedBackgroundView = [[UIView alloc] init];
+    
     // 1. 底部的视图，是个UIImageView
      UIImageView *topView = [[UIImageView alloc] init];
     [self.contentView addSubview:topView];
+//    topView.image = [UIImage imageWithName:@"timeline_card_top_background"];
+//    topView.highlightedImage = [UIImage imageWithName:@"timeline_card_top_background_highlighted"];
     self.topView = topView;
     
     // 2. 用户头像
@@ -116,6 +126,7 @@
     // 5. 微博发送时间
     UILabel *timeLabel = [[UILabel alloc] init];
     [topView addSubview:timeLabel];
+    timeLabel.textColor = [UIColor orangeColor];
     timeLabel.font = kCreatAndSourceFont;
     self.timeLabel = timeLabel;
     
@@ -128,6 +139,7 @@
     // 7. 微博正文，没有图片
     UILabel *contentLabel = [[UILabel alloc] init];
     [topView addSubview:contentLabel];
+    contentLabel.numberOfLines = 0;
     contentLabel.font = kTextFont;
     self.contentLabel = contentLabel;
     
@@ -142,21 +154,25 @@
     
     // 1. 转发微博底部的视图，也是UIImageView
     UIImageView *retweetView = [[UIImageView alloc] init];
+    retweetView.image = [UIImage imageWithName:@"timeline_retweet_background"withTop:0.5 left:0.9];
     [self.topView addSubview:retweetView];
     self.retweetView = retweetView;
     
     // 2. 转发微博的作者
     UIButton *retweetNameButton = [[UIButton alloc] init];
     [retweetNameButton setTitle:self.statusFrame.status.retweeted_status.user.name forState:UIControlStateNormal];
+    retweetNameButton.titleLabel.font = kTextFont;
     [retweetNameButton setTitle:self.statusFrame.status.retweeted_status.user.name forState:UIControlStateHighlighted];
-    [retweetNameButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [retweetNameButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [retweetNameButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [retweetNameButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     [retweetView addSubview:retweetNameButton];
     self.retweetNameButton = retweetNameButton;
     
     // 3. 转发微博的内容
     UILabel *retweetContentLabel = [[UILabel alloc]init];
     [retweetView addSubview:retweetContentLabel];
+//    retweetContentLabel.backgroundColor = [UIColor lightGrayColor];
+    retweetContentLabel.numberOfLines = 0;
     retweetContentLabel.font = kTextFont;
     self.retweetContentLabel = retweetContentLabel;
     
@@ -170,14 +186,22 @@
 
 - (void) setBottomView{
 
-    UIImageView *statusToolbar = [[UIImageView alloc] init];
+    YRStatusToolBar *statusToolbar = [[YRStatusToolBar alloc] init];
     [self.contentView addSubview:statusToolbar];
     self.statusToolbar = statusToolbar;
     
-#warning  这上面再添加3个button
 }
 
+- (void)setFrame:(CGRect)frame{
 
+//    frame.origin.x += kGarp;
+    frame.size.height -= kGarp + 1;
+//    frame.size.width -= 2 * kGarp;
+//    frame.origin.x = kGarp;
+//    frame.origin.y += 2 *kGarp;
+    
+    [super setFrame:frame];
+}
 
 - (void)setStatusFrame:(YRStatusFrame *)statusFrame{
 
@@ -206,23 +230,36 @@
     [_iconView setImageWithURL:[NSURL URLWithString:user.profile_image_url] placeholderImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted_os7"] ];
     
     // 2. 微博作者
-    _nameLabel.frame =_statusFrame.nameLabelF;
     _nameLabel.text = user.name;
+    _nameLabel.frame =_statusFrame.nameLabelF;
     
     // 3. 会员
     _vipView.frame = _statusFrame.vipViewF;
     
     // 4. 发送时间
-    _timeLabel.frame = _statusFrame.timeLabelF;
     _timeLabel.text = status.created_at;
+    CGFloat timeX = self.nameLabel.frame.origin.x;
+    CGFloat timeY = CGRectGetMaxY(self.nameLabel.frame) + kGarp;
+    CGFloat timeH = kContentH;
+    CGSize timeSize = CGSizeMake(MAXFLOAT, timeH);
+    CGFloat timeW = [status.created_at sizeWithFont:kCreatAndSourceFont maxSize:timeSize].width;
+    _timeLabel.frame  = CGRectMake(timeX, timeY, timeW, timeH);
+
     
     // 5. 发送来源
-    _sourceLabel.frame = _statusFrame.sourceLabelF;
     _sourceLabel.text = status.source;
+    CGFloat sourceX = CGRectGetMaxX(self.timeLabel.frame) + kGarp;
+    CGFloat sourceY = timeY;
+    CGFloat sourceH = kContentH;
+    CGSize sourceSize = CGSizeMake(MAXFLOAT, sourceH);
+    CGFloat sourceW =[status.source sizeWithFont:kCreatAndSourceFont maxSize:sourceSize].width;
+    _sourceLabel.frame = CGRectMake(sourceX, sourceY, sourceW, sourceH);
+    
+
     
     // 6. 微博原文
-    _contentLabel.frame = _statusFrame.contentLabelF;
     _contentLabel.text = status.text;
+    _contentLabel.frame = _statusFrame.contentLabelF;
     
     // 7. 微博图片
     if (_statusFrame.status.thumbnail_pic) {
@@ -248,21 +285,20 @@
         _retweetView.frame = _statusFrame.retweetViewF;
         
         // 1. 转发微博的昵称
-        _retweetNameButton.frame = _statusFrame.retweetNameLabelF;
-        [_retweetNameButton setTitle:[NSString stringWithFormat:@"@%@",retweetUser.name] forState:UIControlStateHighlighted];
+        [_retweetNameButton setTitle:[NSString stringWithFormat:@"%@",retweetUser.name] forState:UIControlStateHighlighted];
         [_retweetNameButton setTitle:retweetUser.name forState:UIControlStateNormal];
-        
+        _retweetNameButton.frame = _statusFrame.retweetNameLabelF;
         
         // 2. 转发微博的内容
-        _retweetContentLabel.frame = _statusFrame.retweetContentLabelF;
         _retweetContentLabel.text = retweetStatus.text;
+        _retweetContentLabel.frame = _statusFrame.retweetContentLabelF;
         
         // 3. 转发微博的图片
         if (retweetStatus.thumbnail_pic) {
             
             _retweetPhotoView.hidden = NO;
-            _retweetPhotoView.frame = _statusFrame.retweetPhotoViewF;
             [_retweetPhotoView setImageWithURL:[NSURL URLWithString:retweetStatus.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted_os7"]];
+            _retweetPhotoView.frame = _statusFrame.retweetPhotoViewF;
             
         }else{
         
@@ -279,5 +315,7 @@
 - (void) setButtomViewFrame{
 
     _statusToolbar.frame = _statusFrame.statusToolbarF;
+    _statusToolbar.status = _statusFrame.status;
+
 }
 @end

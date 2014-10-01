@@ -72,7 +72,14 @@
 
     //每一个tableView控制器都有一个refresh控制器
     self.refreshControl = _refresh;
+
+    self.tableView.backgroundColor = YRColor(236, 236, 236, 1);
+//    self.tableView.backgroundColor = [UIColor colorWithRed:236 / 255.0 green:236 /255.0 blue:236 /255.0 alpha:1];
     
+    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
+    
+    // 开始就刷新数据
+    [self requestWeiboData];
 }
 
 
@@ -171,12 +178,14 @@
     // 这里使用cell的一个方法，返回一个封装好的cell
     YRStatusCell *cell = [YRStatusCell creatCellWithTableView:tableView];
     
+    cell.statusFrame = _statusFrameArray[indexPath.row];
+    
     return cell;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    return [_statusFrameArray[indexPath.section] cellHeight];
+    return [_statusFrameArray[indexPath.row] cellHeight];
 }
 
 #pragma mark - refresh控制器的方法
@@ -184,7 +193,13 @@
 
     [_refresh beginRefreshing];
     NSLog(@"refresh");
-//微博对象进行网络请求数据 (通过网络接口)
+    
+    [self requestWeiboData];
+}
+
+- (void) requestWeiboData{
+
+    //微博对象进行网络请求数据 (通过网络接口)
     /**
      *  加载用户消息列表
      */

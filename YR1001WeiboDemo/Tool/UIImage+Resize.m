@@ -26,6 +26,27 @@
     
 }
 
++ (UIImage *)imageWithName:(NSString *)imageName withTop:(CGFloat)top left:(CGFloat)left{
+    
+    
+    UIImage *image = [UIImage imageNamed:imageName];
+    
+    CGFloat w = image.size.width * left;
+    CGFloat h = image.size.height * top;
+    
+    return [image resizableImageWithCapInsets:UIEdgeInsetsMake(h, w, h, w) resizingMode:UIImageResizingModeStretch];
+    
+    
+    
+//    + (UIImage *)resizedImageWithName:(NSString *)name left:(CGFloat)left top:(CGFloat)top
+//    {
+//        UIImage *image = [self imageWithName:name];
+//        return [image stretchableImageWithLeftCapWidth:image.size.width * left topCapHeight:image.size.height * top];
+//    }
+//
+    
+}
+
 /**
  *  返回一个pop图片，
  *
