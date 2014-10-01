@@ -11,19 +11,13 @@
 
 @class YRStatusFrame;
 @class YRStatusCell;
-@class YRRCAButton;
+
 
 @protocol YRStatusCellDelegate <NSObject>
 
 @optional
 /** cell中的用户头像被点击 */
 - (void) statusCell:(YRStatusCell *)statusCell avatarLargeButtonDidClick:(UIButton *)avatarLargeButton;
-/** 转发按钮被点击 */
-- (void) statusCell:(YRStatusCell *)statusCell repostsButtonDidClick:(YRRCAButton *)reposts;
-/** 评论按钮被点击 */
-- (void)statusCell:(YRStatusCell *)statusCell commentsButtonDidClick:(YRRCAButton *)comments;
-/** 点赞按钮被点击 */
-- (void)statusCell:(YRStatusCell *)statusCell attitudesButtonDidClick:(YRRCAButton *)attitudes;
 
 @end
 

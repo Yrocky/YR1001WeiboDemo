@@ -9,8 +9,23 @@
 #import <UIKit/UIKit.h>
 
 @class YRStatus;
+@class YRStatusToolBar;
+@class YRRCAButton;
+@protocol YRStatusToolBarDelegate <NSObject>
+
+@optional
+/** 转发按钮被点击 */
+- (void) statusToolBar:(YRStatusToolBar *)statusToolBar repostsButtonDidClick:(YRRCAButton *)reposts;
+/** 评论按钮被点击 */
+- (void)statusToolBar:(YRStatusToolBar *)statusToolBar commentsButtonDidClick:(YRRCAButton *)comments;
+/** 点赞按钮被点击 */
+- (void)statusToolBar:(YRStatusToolBar *)statusToolBar attitudesButtonDidClick:(YRRCAButton *)attitudes;
+
+@end
 
 @interface YRStatusToolBar : UIImageView
+
+@property (nonatomic ,retain) id<YRStatusToolBarDelegate>delegate;
 
 @property (nonatomic ,retain) YRStatus *status;
 @end
