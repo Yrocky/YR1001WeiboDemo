@@ -1,5 +1,5 @@
 //
-//  YRStatusTopView.h
+//  YRRetweetedStatusView.h
 //  YR1001WeiboDemo
 //
 //  Created by Rocky on 14-10-2.
@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class YRStatusFrame;
-@interface YRStatusTopView : UIImageView
+
+@interface YRRetweetedStatusView : UIImageView
 @property (nonatomic ,retain) YRStatusFrame *statusFrame;
 @end

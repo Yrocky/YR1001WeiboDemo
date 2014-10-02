@@ -116,8 +116,8 @@
         CGFloat retweetNameY = kGarp;
         CGFloat retweetNameH = kScreenNameHeight;
         CGSize retweetSize = CGSizeMake(MAXFLOAT, retweetNameH);
-        NSString *name = [NSString stringWithFormat:@"%@",_status.retweeted_status.user.name];
-        CGFloat retweetNameW = [name sizeWithFont:kTextFont maxSize:retweetSize].width;
+        NSString *retweetName = [NSString stringWithFormat:@"%@",_status.retweeted_status.user.name];
+        CGFloat retweetNameW = [retweetName sizeWithFont:kTextFont maxSize:retweetSize].width;
         _retweetNameLabelF = CGRectMake(retweetNameX, retweetNameY, retweetNameW, retweetNameH);
         
         // 12. 转发微博的内容
@@ -152,7 +152,6 @@
             topH = CGRectGetMaxY(_photoViewF) + kGarp;
         }
     }
-//    topH += kGarp;
     
     _topViewF = CGRectMake(topX, topY, topW, topH);
     
@@ -162,11 +161,9 @@
     CGFloat statusToolbarW = cellW + 6;
     CGFloat statusToolbarH = 30;
     _statusToolbarF = CGRectMake(statusToolbarX, statusToolbarY, statusToolbarW, statusToolbarH);
-        
     
     _cellHeight = CGRectGetMaxY(_statusToolbarF) + kGarp;
     
-
 }
 /*
 - (void) subViewsFrame{

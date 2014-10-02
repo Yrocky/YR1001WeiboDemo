@@ -16,12 +16,13 @@
 
 @implementation YRStatus
 
-// get方法
+// 发送时间的get方法
 - (NSString *)created_at{
 
     return [NSString created_atStringWithStandardDateString:_created_at];
 }
-// set方法 这里是有写set方法和get方法都可以的，但是这两个方法只能写一个，
+
+// 发送来源的set方法 这里是有写set方法和get方法都可以的，但是这两个方法只能写一个，
 -(void)setSource:(NSString *)source{
 
     _source = source;//

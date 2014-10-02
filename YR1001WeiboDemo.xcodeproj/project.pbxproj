@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D71C03E519DCE3A1006F3659 /* YRStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03E419DCE3A1006F3659 /* YRStatusTopView.m */; };
+		D71C03E819DCE4B5006F3659 /* YRRetweetedStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03E719DCE4B5006F3659 /* YRRetweetedStatusView.m */; };
 		D7553BA519DB849200E327D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7553BA419DB849200E327D4 /* Foundation.framework */; };
 		D7553BA719DB849200E327D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7553BA619DB849200E327D4 /* CoreGraphics.framework */; };
 		D7553BA919DB849200E327D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7553BA819DB849200E327D4 /* UIKit.framework */; };
@@ -85,6 +86,8 @@
 /* Begin PBXFileReference section */
 		D71C03E319DCE3A1006F3659 /* YRStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRStatusTopView.h; sourceTree = "<group>"; };
 		D71C03E419DCE3A1006F3659 /* YRStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRStatusTopView.m; sourceTree = "<group>"; };
+		D71C03E619DCE4B5006F3659 /* YRRetweetedStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRRetweetedStatusView.h; sourceTree = "<group>"; };
+		D71C03E719DCE4B5006F3659 /* YRRetweetedStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRRetweetedStatusView.m; sourceTree = "<group>"; };
 		D7553BA119DB849200E327D4 /* YR1001WeiboDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YR1001WeiboDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7553BA419DB849200E327D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7553BA619DB849200E327D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -346,6 +349,8 @@
 				D7553BDB19DB84BC00E327D4 /* YRStatusCell.m */,
 				D71C03E319DCE3A1006F3659 /* YRStatusTopView.h */,
 				D71C03E419DCE3A1006F3659 /* YRStatusTopView.m */,
+				D71C03E619DCE4B5006F3659 /* YRRetweetedStatusView.h */,
+				D71C03E719DCE4B5006F3659 /* YRRetweetedStatusView.m */,
 				D7F8BAF719DC4A5A008C25FD /* YRStatusToolBar.h */,
 				D7F8BAF819DC4A5A008C25FD /* YRStatusToolBar.m */,
 				D7553BDF19DB84BC00E327D4 /* YRRCAButton.h */,
@@ -725,6 +730,7 @@
 				D7553C2E19DB84BC00E327D4 /* JSONKit.m in Sources */,
 				D7553C2019DB84BC00E327D4 /* YRGuideViewController.m in Sources */,
 				D7553C2419DB84BC00E327D4 /* YRViewControllerMangers.m in Sources */,
+				D71C03E819DCE4B5006F3659 /* YRRetweetedStatusView.m in Sources */,
 				D7553C8919DBB3A400E327D4 /* SDWebImageDecoder.m in Sources */,
 				D7553C6319DB98CB00E327D4 /* MJTypeEncoding.m in Sources */,
 				D7553C1F19DB84BC00E327D4 /* YRRCAButton.m in Sources */,
