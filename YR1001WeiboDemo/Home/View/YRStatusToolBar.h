@@ -12,6 +12,7 @@
 @class YRStatusToolBar;
 @class YRRCAButton;
 
+/** 底部按钮的代理方法 */
 @protocol YRStatusToolBarDelegate <NSObject>
 
 @optional

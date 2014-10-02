@@ -9,7 +9,7 @@
 #import "YRStatusFrame.h"
 #import "YRStatus.h"
 #import "YRUser.h"
-
+#import "YRPhotosView.h"
 
 
 /**
@@ -94,12 +94,12 @@
     _contentLabelF = CGRectMake(contentX, contentY, contentW, contentH + kGarp);
     
     // 8. 微博图片
-    if (_status.thumbnail_pic) {
+    if (_status.pic_urls.count) {
         
         CGFloat photoX = contentX + kGarp;
         CGFloat photoY = CGRectGetMaxY(_contentLabelF) ;
-        CGFloat photoWH = kThumbnailPicWH;
-        _photoViewF = CGRectMake(photoX, photoY, photoWH, photoWH);
+        CGSize photoSize = [YRPhotosView photoViewWithPhoutCount:_status.pic_urls.count];
+        _photoViewF = (CGRect){photoX,photoY,photoSize};
     }
     
     // 9. 转发微博
@@ -129,11 +129,12 @@
         _retweetContentLabelF = CGRectMake(retweetContentX, retweetContentY, retweetContentW, retweetContentH);
         
         // 13. 转发微博的图片
-        if (_status.retweeted_status.thumbnail_pic) {
+        if (_status.retweeted_status.pic_urls) {
+            
             CGFloat retweetPhotoX = retweetContentX + kGarp;
             CGFloat retweetPhotoY = CGRectGetMaxY(_retweetContentLabelF) + kGarp;
-            CGFloat retweetPhotoWH = kThumbnailPicWH;
-            _retweetPhotoViewF = CGRectMake(retweetPhotoX, retweetPhotoY, retweetPhotoWH, retweetPhotoWH);
+            CGSize retweetPhotoSize = [YRPhotosView photoViewWithPhoutCount:_status.retweeted_status.pic_urls.count];
+            _retweetPhotoViewF = (CGRect){retweetPhotoX,retweetPhotoY,retweetPhotoSize};
             
             retweetedViewH = CGRectGetMaxY(_retweetPhotoViewF) ;
         }else{
@@ -146,10 +147,10 @@
         topH = CGRectGetMaxY(_retweetViewF) ;
         
     }else{
-        if (!_status.thumbnail_pic) {// 无图
+        if (!_status.pic_urls) {// 无图
             topH = CGRectGetMaxY(_contentLabelF) ;
         }else{// 有图
-            topH = CGRectGetMaxY(_photoViewF) + kGarp;
+            topH = CGRectGetMaxY(_photoViewF) ;
         }
     }
     

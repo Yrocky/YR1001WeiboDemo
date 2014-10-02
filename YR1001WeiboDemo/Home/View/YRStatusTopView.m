@@ -10,6 +10,7 @@
 #import "YRStatusFrame.h"
 #import "YRStatus.h"
 #import "YRUser.h"
+#import "YRPhotosView.h"
 #import "UIImageView+WebCache.h"
 #import "YRRetweetedStatusView.h"
 
@@ -23,7 +24,7 @@
 @property (nonatomic, weak) UIImageView *vipView;
 
 /** 配图 */
-@property (nonatomic, weak) UIImageView *photoView;
+@property (nonatomic, weak) YRPhotosView *photosView;
 
 /** 昵称 */
 @property (nonatomic, weak) UILabel *nameLabel;
@@ -86,9 +87,9 @@
         self.contentLabel = contentLabel;
         
         // 7. 微博图片
-        UIImageView *photoImageView = [[UIImageView alloc] init];
-        [self addSubview:photoImageView];
-        self.photoView = photoImageView;
+        YRPhotosView *photosView = [[YRPhotosView alloc] init];
+        [self addSubview:photosView];
+        self.photosView = photosView;
         
         // 8. 转发微博的底部视图
         YRRetweetedStatusView *retweetView = [[YRRetweetedStatusView alloc] init];
@@ -140,23 +141,26 @@
     _contentLabel.frame = _statusFrame.contentLabelF;
     
     // 7. 微博图片
-    if (_statusFrame.status.thumbnail_pic) {
+    if (_statusFrame.status.pic_urls.count) {
         
-        _photoView.hidden = NO;
-        _photoView.frame = _statusFrame.photoViewF;
-        [_photoView setImageWithURL:[NSURL URLWithString:status.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted_os7"]];
+        _photosView.hidden = NO;
+        _photosView.frame = _statusFrame.photoViewF;
+        
+        _photosView.photos = _statusFrame.status.pic_urls;
+
     }else{
         
-        _photoView.hidden = YES;
+        _photosView.hidden = YES;
     }
     
     YRStatus *retweetStatus = status.retweeted_status;
     
-    _retweetView.statusFrame = _statusFrame;
-    
     if (retweetStatus) {
         
         _retweetView.hidden = NO;
+        
+        _retweetView.statusFrame = _statusFrame;
+        
         _retweetView.frame = _statusFrame.retweetViewF;
         
     }else{

@@ -30,9 +30,9 @@
  */
 @property (nonatomic, copy) NSString *idstr;
 /**
- *  微博的单张配图
+ *  微博的配图
  */
-@property (nonatomic, copy) NSString *thumbnail_pic;
+@property (nonatomic ,retain) NSArray *pic_urls;// 需要一个方法，将这个数组转化成相应的模型类
 
 /**
  *  微博的转发数

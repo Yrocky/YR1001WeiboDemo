@@ -7,6 +7,8 @@
 //
 
 #import "YRStatus.h"
+#import "MJExtension.h"
+#import "YRPhoto.h"
 
 /**
  *  加入一个第三方库，计算出xml中的数据
@@ -15,6 +17,13 @@
 #import "XMLDictionary.h"
 
 @implementation YRStatus
+
+// 这个方法的作用是将模型属性中的pic_urls 数组里面装的对象转化成装有对应的YRPhoto类的模型
+- (NSDictionary *)objectClassInArray{
+
+    return @{@"pic_urls":[YRPhoto class]};
+}
+
 
 // 发送时间的get方法
 - (NSString *)created_at{

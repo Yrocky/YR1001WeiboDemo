@@ -13,24 +13,7 @@
 #import "CustomTitleButton.h"
 #import "MJExtension.h"
 
-/** 中间试图中button箭头向下的tag */
-#define kDownImageTag 0
-/** 中间视图中button箭头向上的tag */
-#define kUpImageTag 1
-/** 右边pop出现的tag */
-#define kPopRightImageTag 1
-/** 左边pop出现的tag*/
-#define kPopLeftImageTag 1
-/** 中间pop试图的宽度 */
-#define kPopTitleImageW 150
-/** 中间pop试图的高度*/
-#define kPopTitleImaheH 300
-/** 所有pop试图的Y坐标值 */
-#define kPopImageY 35
-/** pop出的左视图和右视图的宽 */
-#define kPopRightAndLeftImageW 200
-/**  pop出的左视图和右视图的高 */
-#define kPopRightAndLeftImageH 200
+
 
 @interface YRHomeViewController ()<SinaWeiboRequestDelegate,YRStatusCellDelegate>
 

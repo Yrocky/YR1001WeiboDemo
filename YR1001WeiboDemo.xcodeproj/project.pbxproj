@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D71C03E519DCE3A1006F3659 /* YRStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03E419DCE3A1006F3659 /* YRStatusTopView.m */; };
 		D71C03E819DCE4B5006F3659 /* YRRetweetedStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03E719DCE4B5006F3659 /* YRRetweetedStatusView.m */; };
+		D71C03EB19DD2594006F3659 /* YRPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03EA19DD2594006F3659 /* YRPhoto.m */; };
+		D71C03EE19DD26D1006F3659 /* YRPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03ED19DD26D1006F3659 /* YRPhotosView.m */; };
+		D71C03F119DD26E0006F3659 /* YRPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03F019DD26E0006F3659 /* YRPhotoView.m */; };
 		D7553BA519DB849200E327D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7553BA419DB849200E327D4 /* Foundation.framework */; };
 		D7553BA719DB849200E327D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7553BA619DB849200E327D4 /* CoreGraphics.framework */; };
 		D7553BA919DB849200E327D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7553BA819DB849200E327D4 /* UIKit.framework */; };
@@ -88,6 +91,12 @@
 		D71C03E419DCE3A1006F3659 /* YRStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRStatusTopView.m; sourceTree = "<group>"; };
 		D71C03E619DCE4B5006F3659 /* YRRetweetedStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRRetweetedStatusView.h; sourceTree = "<group>"; };
 		D71C03E719DCE4B5006F3659 /* YRRetweetedStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRRetweetedStatusView.m; sourceTree = "<group>"; };
+		D71C03E919DD2594006F3659 /* YRPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRPhoto.h; sourceTree = "<group>"; };
+		D71C03EA19DD2594006F3659 /* YRPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRPhoto.m; sourceTree = "<group>"; };
+		D71C03EC19DD26D0006F3659 /* YRPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRPhotosView.h; sourceTree = "<group>"; };
+		D71C03ED19DD26D1006F3659 /* YRPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRPhotosView.m; sourceTree = "<group>"; };
+		D71C03EF19DD26E0006F3659 /* YRPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRPhotoView.h; sourceTree = "<group>"; };
+		D71C03F019DD26E0006F3659 /* YRPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRPhotoView.m; sourceTree = "<group>"; };
 		D7553BA119DB849200E327D4 /* YR1001WeiboDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YR1001WeiboDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7553BA419DB849200E327D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7553BA619DB849200E327D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -273,7 +282,7 @@
 				D7553BE819DB84BC00E327D4 /* Main */,
 				D7553BF819DB84BC00E327D4 /* Me */,
 				D7553BFE19DB84BC00E327D4 /* Message */,
-				D7553C0B19DB84BC00E327D4 /* SinaWeibo */,
+				D7553C0B19DB84BC00E327D4 /* Lib */,
 				D7553C1819DB84BC00E327D4 /* Tool */,
 				D7553BAB19DB849200E327D4 /* Supporting Files */,
 			);
@@ -338,6 +347,8 @@
 				D7553C9419DBBDCC00E327D4 /* YRUser.m */,
 				D7553BDC19DB84BC00E327D4 /* YRStatusFrame.h */,
 				D7553BDD19DB84BC00E327D4 /* YRStatusFrame.m */,
+				D71C03E919DD2594006F3659 /* YRPhoto.h */,
+				D71C03EA19DD2594006F3659 /* YRPhoto.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +362,10 @@
 				D71C03E419DCE3A1006F3659 /* YRStatusTopView.m */,
 				D71C03E619DCE4B5006F3659 /* YRRetweetedStatusView.h */,
 				D71C03E719DCE4B5006F3659 /* YRRetweetedStatusView.m */,
+				D71C03EC19DD26D0006F3659 /* YRPhotosView.h */,
+				D71C03ED19DD26D1006F3659 /* YRPhotosView.m */,
+				D71C03EF19DD26E0006F3659 /* YRPhotoView.h */,
+				D71C03F019DD26E0006F3659 /* YRPhotoView.m */,
 				D7F8BAF719DC4A5A008C25FD /* YRStatusToolBar.h */,
 				D7F8BAF819DC4A5A008C25FD /* YRStatusToolBar.m */,
 				D7553BDF19DB84BC00E327D4 /* YRRCAButton.h */,
@@ -498,7 +513,7 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		D7553C0B19DB84BC00E327D4 /* SinaWeibo */ = {
+		D7553C0B19DB84BC00E327D4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
 				D7553C6719DBB3A400E327D4 /* SDWebImage */,
@@ -507,6 +522,7 @@
 				D7553C0C19DB84BC00E327D4 /* JSONKit */,
 				D7553C0F19DB84BC00E327D4 /* SinaWeibo */,
 			);
+			name = Lib;
 			path = SinaWeibo;
 			sourceTree = "<group>";
 		};
@@ -716,6 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71C03F119DD26E0006F3659 /* YRPhotoView.m in Sources */,
 				D7553C6019DB98CB00E327D4 /* MJMember.m in Sources */,
 				D7553C6219DB98CB00E327D4 /* MJType.m in Sources */,
 				D7553C3919DB86A500E327D4 /* UIImage+Resize.m in Sources */,
@@ -739,12 +756,14 @@
 				D7553C2219DB84BC00E327D4 /* YRMainViewController.m in Sources */,
 				D7553C9119DBB3A400E327D4 /* UIImage+WebP.m in Sources */,
 				D7553BB119DB849200E327D4 /* main.m in Sources */,
+				D71C03EB19DD2594006F3659 /* YRPhoto.m in Sources */,
 				D7553C8B19DBB3A400E327D4 /* SDWebImageDownloaderOperation.m in Sources */,
 				D7553BB519DB849200E327D4 /* YRAppDelegate.m in Sources */,
 				D7553C8519DBB3A400E327D4 /* MKAnnotationView+WebCache.m in Sources */,
 				D7553C6419DB98CB00E327D4 /* NSObject+MJCoding.m in Sources */,
 				D7553C2519DB84BC00E327D4 /* UIBarButtonItem+Custom.m in Sources */,
 				D7553C1E19DB84BC00E327D4 /* YRStatusFrame.m in Sources */,
+				D71C03EE19DD26D1006F3659 /* YRPhotosView.m in Sources */,
 				D7553C5F19DB98CB00E327D4 /* MJIvar.m in Sources */,
 				D7553C4219DB884C00E327D4 /* NSString+Size.m in Sources */,
 				D7F8BAF919DC4A5A008C25FD /* YRStatusToolBar.m in Sources */,

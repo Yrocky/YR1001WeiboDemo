@@ -41,7 +41,7 @@
     if ( self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]){
     
         // 1. 添加原创微博控件
-        [self setOriginStatus];
+        [self setTopStatusView];
         
         // 2. 添加底部微博工具条
         [self setBottomView];
@@ -50,7 +50,7 @@
     return self;
 }
 
-- (void) setOriginStatus{
+- (void) setTopStatusView{
 
 //    self.selectedBackgroundView = [[UIView alloc] init];
     
@@ -82,14 +82,14 @@
     _statusFrame = statusFrame;
     
     // 1. 设置原创微博
-    [self setOriginFrame];
+    [self setStatusFrame];
     
     // 2. 设置底部的按钮栏
     [self setButtomViewFrame];
     
 }
 
-- (void) setOriginFrame{
+- (void) setStatusFrame{
     
     _topView.frame = _statusFrame.topViewF;
     _topView.statusFrame = _statusFrame;

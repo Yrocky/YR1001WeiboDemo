@@ -10,6 +10,7 @@
 #import "YRStatusFrame.h"
 #import "YRStatus.h"
 #import "YRUser.h"
+#import "YRPhotosView.h"
 #import "UIImageView+WebCache.h"
 
 
@@ -22,8 +23,8 @@
 /** 被转发微博的正文\内容 */
 @property (nonatomic, weak) UILabel *retweetContentLabel;
 
-/** 被转发微博的配图 */
-@property (nonatomic, weak) UIImageView *retweetPhotoView;
+/** 被转发微博的配图的底部父视图 */
+@property (nonatomic, weak) YRPhotosView *retweetPhotosView;
 
 @end
 
@@ -53,9 +54,9 @@
         self.retweetContentLabel = retweetContentLabel;
         
         // 4. 转发微博的图片
-        UIImageView *retweetPhotoView = [[UIImageView alloc] init];
-        [self addSubview:retweetPhotoView];
-        self.retweetPhotoView = retweetPhotoView;
+        YRPhotosView *retweetPhotosView = [[YRPhotosView alloc] init];
+        [self addSubview:retweetPhotosView];
+        self.retweetPhotosView = retweetPhotosView;
 
         
     }
@@ -80,15 +81,15 @@
     _retweetContentLabel.frame = _statusFrame.retweetContentLabelF;
     
     // 3. 转发微博的图片
-    if (retweetStatus.thumbnail_pic) {
+    if (retweetStatus.pic_urls.count) {
         
-        _retweetPhotoView.hidden = NO;
-        [_retweetPhotoView setImageWithURL:[NSURL URLWithString:retweetStatus.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted_os7"]];
-        _retweetPhotoView.frame = _statusFrame.retweetPhotoViewF;
+        _retweetPhotosView.hidden = NO;
+        _retweetPhotosView.frame = _statusFrame.retweetPhotoViewF;
+        _retweetPhotosView.photos = retweetStatus.pic_urls;
         
     }else{
         
-        _retweetPhotoView.hidden = YES;
+        _retweetPhotosView.hidden = YES;
     }
 }
 

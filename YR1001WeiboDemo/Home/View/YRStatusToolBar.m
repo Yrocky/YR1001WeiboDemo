@@ -85,7 +85,8 @@
 }
 
 
-#pragma mark - buttonClick
+#pragma mark - buttonClick Delegate
+
 - (void) rButtonClick:(YRRCAButton *)button{
 
     if ([self.delegate respondsToSelector:@selector(statusToolBar:repostsButtonDidClick:)]) {
