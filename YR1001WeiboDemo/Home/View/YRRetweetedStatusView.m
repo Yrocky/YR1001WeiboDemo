@@ -37,7 +37,7 @@
         
         // 设置背景图片
         self.image = [UIImage imageWithName:@"timeline_retweet_background"withTop:0.5 left:0.9];
-
+        self.userInteractionEnabled = YES;
         // 2. 转发微博的作者
         UIButton *retweetNameButton = [[UIButton alloc] init];
         retweetNameButton.titleLabel.font = kTextFont;

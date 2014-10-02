@@ -8,6 +8,9 @@
 
 #import "YRPhotosView.h"
 #import "YRPhotoView.h"
+#import "YRPhoto.h"
+#import "MJPhoto.h"
+#import "MJPhotoBrowser.h"
 
 #define kImageWH 80
 #define kPhotoMargin 10
@@ -23,11 +26,38 @@
         for (int index = 0; index < 9; index ++) {
             YRPhotoView *photoView = [[YRPhotoView alloc] init];
             photoView.tag = index;
+            [photoView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)] ];
             photoView.userInteractionEnabled = YES;
             [self addSubview:photoView];
         }
     }
     return self;
+}
+
+- (void) tapGesture:(UIGestureRecognizer *)gesture{
+    
+    int count = self.photos.count;
+    
+    // 1.封装图片数据
+    NSMutableArray *myphotos = [NSMutableArray arrayWithCapacity:count];
+    for (int i = 0; i<count; i++) {
+        // 一个MJPhoto对应一张显示的图片
+        MJPhoto *mjphoto = [[MJPhoto alloc] init];
+        
+        mjphoto.srcImageView = self.subviews[i]; // 来源于哪个UIImageView
+        
+        YRPhoto *iwphoto = self.photos[i];
+        NSString *photoUrl = [iwphoto.thumbnail_pic stringByReplacingOccurrencesOfString:@"thumbnail" withString:@"bmiddle"];
+        mjphoto.url = [NSURL URLWithString:photoUrl]; // 图片路径
+        
+        [myphotos addObject:mjphoto];
+    }
+    
+    // 2.显示相册
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    browser.currentPhotoIndex = gesture.view.tag; // 弹出相册时显示的第一张图片是？
+    browser.photos = myphotos; // 设置所有的图片
+    [browser show];
 }
 
 - (void)setPhotos:(NSArray *)photos{

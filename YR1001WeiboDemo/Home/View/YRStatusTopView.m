@@ -50,6 +50,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        self.userInteractionEnabled = YES;
+        
         // 1. 用户头像
         UIImageView *iconView = [[UIImageView alloc] init];
         [self addSubview:iconView];

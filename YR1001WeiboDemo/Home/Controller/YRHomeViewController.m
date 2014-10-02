@@ -43,22 +43,11 @@
      */
     [self customNavigationBar];
 
-    /**
-     加载一个刷新控件
-     
-     */
-    _refresh = [[UIRefreshControl alloc] initWithFrame:CGRectMake(10, 20, 30, 30)];
+    [self setRefresh];
     
-    _refresh.backgroundColor = [UIColor clearColor];
-    
-    [_refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-
-    //每一个tableView控制器都有一个refresh控制器
-    self.refreshControl = _refresh;
-
     self.tableView.backgroundColor = YRColor(236, 236, 236, 1);
-//    self.tableView.backgroundColor = [UIColor colorWithRed:236 / 255.0 green:236 /255.0 blue:236 /255.0 alpha:1];
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
     
     // 开始就刷新数据
@@ -90,6 +79,20 @@
     self.navigationItem.titleView = titleButton;
 }
 
+- (void) setRefresh{
+    /**
+     加载一个刷新控件
+     
+     */
+    _refresh = [[UIRefreshControl alloc] initWithFrame:CGRectMake(10, 20, 30, 30)];
+    
+    _refresh.backgroundColor = [UIColor clearColor];
+    
+    [_refresh addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    
+    //每一个tableView控制器都有一个refresh控制器
+    self.refreshControl = _refresh;
+}
 
 #pragma mark - BarButtonItem
 
