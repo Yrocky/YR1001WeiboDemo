@@ -129,7 +129,7 @@
         _retweetContentLabelF = CGRectMake(retweetContentX, retweetContentY, retweetContentW, retweetContentH);
         
         // 13. 转发微博的图片
-        if (_status.retweeted_status.pic_urls) {
+        if (_status.retweeted_status.pic_urls.count) {
             
             CGFloat retweetPhotoX = retweetContentX + kGarp;
             CGFloat retweetPhotoY = CGRectGetMaxY(_retweetContentLabelF) + kGarp;
@@ -147,10 +147,10 @@
         topH = CGRectGetMaxY(_retweetViewF) ;
         
     }else{
-        if (!_status.pic_urls) {// 无图
+        if (!_status.pic_urls.count) {// 无图
             topH = CGRectGetMaxY(_contentLabelF) ;
         }else{// 有图
-            topH = CGRectGetMaxY(_photoViewF) ;
+            topH = CGRectGetMaxY(_photoViewF) + kGarp;
         }
     }
     

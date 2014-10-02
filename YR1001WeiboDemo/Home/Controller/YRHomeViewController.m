@@ -33,6 +33,15 @@
 
 @implementation YRHomeViewController
 
+- (NSMutableArray *)statusFrameArray{
+    /**
+     *   进行一个懒加载
+     */
+    if (_statusFrameArray == nil) {
+        _statusFrameArray = [NSMutableArray array];
+    }
+    return _statusFrameArray;
+}
 
 
 - (void)viewDidLoad
@@ -48,10 +57,10 @@
     self.tableView.backgroundColor = YRColor(236, 236, 236, 1);
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
+//    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
     
-    // 开始就刷新数据
-    [self requestWeiboData];
+//    // 开始就刷新数据
+//    [self requestWeiboData];
 }
 
 
@@ -92,6 +101,8 @@
     
     //每一个tableView控制器都有一个refresh控制器
     self.refreshControl = _refresh;
+    
+    [self refresh:_refresh];
 }
 
 #pragma mark - BarButtonItem
@@ -184,7 +195,16 @@
     /**
      *  加载用户消息列表
      */
-    [appDelegate.sinaWeibo requestWithURL:@"statuses/home_timeline.json" params:[NSMutableDictionary dictionaryWithObject:appDelegate.sinaWeibo.userID forKey:@"uid"] httpMethod:@"GET" delegate:self];
+    NSMutableDictionary *paramsDict = [NSMutableDictionary dictionary];
+    paramsDict[@"uid"] = appDelegate.sinaWeibo.userID;
+//    paramsDict[@"count"] = @20;
+    
+    if (_statusFrameArray.count) {
+        
+        YRStatusFrame *lastObj = self.statusFrameArray[0];
+        paramsDict[@"since_id"] = lastObj.status.idstr;
+    }
+    [appDelegate.sinaWeibo requestWithURL:@"statuses/home_timeline.json" params:paramsDict httpMethod:@"GET" delegate:self];
     
     /**
      *  加载用户基本信息
@@ -208,9 +228,25 @@
         
 //        _statusListArray = [result valueForKey:@"statuses"];// 以前的方法
         // 使用第三方库将一个字典里面的键值对赋值给模型里面的属性,这中间不用进行其他修改,现在_statusListArray数组里面装是模型数据
-        _statusListArray = [NSArray array];
         _statusListArray = [YRStatus objectArrayWithKeyValuesArray:[result valueForKey:@"statuses"]];
-        [self loadData];
+//        [self loadData];
+        
+        NSMutableArray *statusFrameArray = [NSMutableArray array];
+        
+        for (YRStatus *status in _statusListArray) {// 从装有模型的数组中取出模型记性frame模型的属性分配，然后使用frame数组装载frame模型，然后进行数据的展示
+            
+            YRStatusFrame *statusFrame = [[YRStatusFrame alloc] init];
+            
+            statusFrame.status = status;
+            
+            [statusFrameArray addObject:statusFrame];
+        }
+        // 这里将新请求得来的数据追加进临时数组，然后将老数据也追加进去，再把临时数组赋给要展示的数组里
+        
+        NSMutableArray *tmpArray = [NSMutableArray array];
+        [tmpArray addObjectsFromArray:statusFrameArray];
+        [tmpArray addObjectsFromArray:self.statusFrameArray];
+        self.statusFrameArray = tmpArray;
 
         [self.tableView reloadData];
         /*
@@ -245,11 +281,8 @@
         
         [titleView setTitle:screen_name forState:UIControlStateNormal];
         [titleView setTitle:screen_name forState:UIControlStateHighlighted];
-
-
-        
     }else{
-    
+        NSLog(@"不是上面两个请求的任何一个，怎么可能绝壁有错误出现");
     }
     [_refresh endRefreshing];
     NSLog(@"endRefreshing");
