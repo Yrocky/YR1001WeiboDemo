@@ -11,6 +11,7 @@
 @class YRStatus;
 @class YRStatusToolBar;
 @class YRRCAButton;
+
 @protocol YRStatusToolBarDelegate <NSObject>
 
 @optional

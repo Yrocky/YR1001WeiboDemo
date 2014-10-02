@@ -14,7 +14,7 @@
  *  转发评论和点赞按钮的尺寸
  *
  */
-#define kButtonW 50
+#define kButtonW 100
 #define kButtonH 15
 #define kGarp 6.18
 
@@ -79,6 +79,33 @@
     [self.cButton setCount:_status.comments_count andImage:@"statusdetail_icon_comment" title:@"评论"];
     [self.aButton setCount:_status.attitudes_count andImage:@"statusdetail_icon_like" title:@"赞"];
     
+    [self.rButton addTarget:self action:@selector(rButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.cButton addTarget:self action:@selector(cButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.aButton addTarget:self action:@selector(aButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+
+#pragma mark - buttonClick
+- (void) rButtonClick:(YRRCAButton *)button{
+
+    if ([self.delegate respondsToSelector:@selector(statusToolBar:repostsButtonDidClick:)]) {
+        [self.delegate statusToolBar:self repostsButtonDidClick:button];
+    }
+    
+}
+- (void) cButtonClick:(YRRCAButton *)button{
+
+    if ([self.delegate respondsToSelector:@selector(statusToolBar:commentsButtonDidClick:)]) {
+        [self.delegate statusToolBar:self commentsButtonDidClick:button];
+    }
+    
+}
+- (void) aButtonClick:(YRRCAButton *)button{
+    
+    
+    if ([self.delegate respondsToSelector:@selector(statusToolBar:attitudesButtonDidClick:)]) {
+        [self.delegate statusToolBar:self attitudesButtonDidClick:button];
+    }
 }
 
 @end

@@ -33,9 +33,16 @@
         [self setTitle:title forState:UIControlStateHighlighted];
         [self setTitle:title forState:UIControlStateNormal];
     }else {
+        NSString  *countTitle = [NSString stringWithFormat:@"%d",count];
     
-        [self setTitle:[NSString stringWithFormat:@"%d",count] forState:UIControlStateHighlighted];
-        [self setTitle:[NSString stringWithFormat:@"%d",count] forState:UIControlStateNormal];
+        if (count >= 10000) {// 大于1w，不显示实际值
+            countTitle = [NSString stringWithFormat:@"%.1f万",count / 10000.0];
+        }
+        // 将出现的1.0中的.0换成1，也就是说不显示.0
+        title = [title stringByReplacingOccurrencesOfString:@".0" withString:@""];
+        
+        [self setTitle:countTitle forState:UIControlStateHighlighted];
+        [self setTitle:countTitle forState:UIControlStateNormal];
     }
     
     [self setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];

@@ -162,19 +162,7 @@
     CGFloat statusToolbarW = cellW + 6;
     CGFloat statusToolbarH = 30;
     _statusToolbarF = CGRectMake(statusToolbarX, statusToolbarY, statusToolbarW, statusToolbarH);
-    
-//    // 15. 底部按钮
-//    CGFloat RCAW = kButtonW;
-//    CGFloat RCAH = kButtonH;
-//    CGFloat RCAY = kGarp;
-//    CGFloat tmp = (320 - 3 * RCAW) / 4;
-//    CGFloat RX = tmp;
-//    CGFloat CX = tmp * 2 + RCAW;
-//    CGFloat AX = tmp * 3 + RCAW * 2;
-//    _repostesFrame = CGRectMake(RX, RCAY, RCAW, RCAH);
-//    _commentsFrame = CGRectMake(CX, RCAY, RCAW, RCAH);
-//    _attitudesFrame = CGRectMake(AX, RCAY, RCAW, RCAH);
-    
+        
     
     _cellHeight = CGRectGetMaxY(_statusToolbarF) + kGarp;
     

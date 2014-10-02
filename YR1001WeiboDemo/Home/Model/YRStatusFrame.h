@@ -52,11 +52,6 @@
 /** 微博的工具条 */
 @property (nonatomic, assign, readonly) CGRect statusToolbarF;
 
-/** 微博的转发和评论数*/
-//@property (nonatomic ,assign ,readonly) CGRect repostesFrame;
-//@property (nonatomic ,assign ,readonly) CGRect commentsFrame;
-//@property (nonatomic ,assign ,readonly) CGRect attitudesFrame;
-
 /** cell的高度 */
 @property (nonatomic, assign, readonly) CGFloat cellHeight;
 

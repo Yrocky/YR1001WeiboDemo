@@ -161,17 +161,13 @@
     [_rightImageView removeFromSuperview];
     [_titleImageView removeFromSuperview];
 }
+
 #pragma  mark - UITableViewContoller delegate
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     return [_statusFrameArray count];
 }
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-//
-//    return [_statusFrameArray count];
-//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -192,7 +188,6 @@
 - (void) refresh:(UIRefreshControl *)sender{
 
     [_refresh beginRefreshing];
-    NSLog(@"refresh");
     
     [self requestWeiboData];
 }
