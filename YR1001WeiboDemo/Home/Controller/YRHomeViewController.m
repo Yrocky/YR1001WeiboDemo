@@ -57,7 +57,7 @@
     self.tableView.backgroundColor = YRColor(236, 236, 236, 1);
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
     
 //    // 开始就刷新数据
 //    [self requestWeiboData];
@@ -272,6 +272,8 @@
 
          */
         
+        [self showNewStatusCount:statusFrameArray.count];
+    
     }else if([urlString isEqualToString:@"https://open.weibo.cn/2/users/show.json"]){//用户信息
         
         _userInfoDict = (NSDictionary *)result;// 获得加载返回的数据,有json事例看到是个字典
@@ -282,32 +284,50 @@
         [titleView setTitle:screen_name forState:UIControlStateNormal];
         [titleView setTitle:screen_name forState:UIControlStateHighlighted];
     }else{
-        NSLog(@"不是上面两个请求的任何一个，怎么可能绝壁有错误出现");
+        NSLog(@"不是上面两个请求的任何一个，怎么可能,绝壁有错误出现");
     }
     [_refresh endRefreshing];
     NSLog(@"endRefreshing");
 }
 
-/**
- *  加载数据到模型中，然后对界面进行刷新
- */
-- (void) loadData{
-    /**
-     *   进行一个懒加载
-     */
-    if (self.statusFrameArray == nil) {
-        _statusFrameArray = [NSMutableArray array];
-    }
-    
-    for (YRStatus *status in _statusListArray) {// 从装有模型的数组中取出模型记性frame模型的属性分配，然后使用frame数组装载frame模型，然后进行数据的展示
-        
-        YRStatusFrame *statusFrame = [[YRStatusFrame alloc] init];
-        
-        statusFrame.status = status;
-        
-        [_statusFrameArray addObject:statusFrame];
-    }
 
+- (void) showNewStatusCount:(int) count{
+    
+    UIButton *button = [[UIButton alloc] init];
+    button.userInteractionEnabled = NO;
+    [button setBackgroundImage:[UIImage imageWithName:@"timeline_new_status_background"] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    
+    button.titleLabel.font = [UIFont systemFontOfSize:14];
+    
+    NSString *title;
+    if (count) {
+        title = [NSString stringWithFormat:@"加载%d条新微博",count];
+    }else{
+        title = [NSString stringWithFormat:@"没有新微博加载"];
+        
+    }
+    [button setTitle:title forState:UIControlStateNormal];
+    CGFloat buttonW = self.view.frame.size.width;
+    CGFloat buttonH = 30;
+    CGFloat buttonY = 64 - buttonH;
+    button.frame = CGRectMake(0, buttonY, buttonW, buttonH);
+    [self.navigationController.view insertSubview:button belowSubview:self.navigationController.navigationBar];
+    
+    [UIView animateWithDuration:0.7 animations:^{
+        
+        button.transform = CGAffineTransformMakeTranslation(0, buttonH);
+        
+    } completion:^(BOOL finished) {
+       [UIView animateWithDuration:0.7 delay:1 options:UIViewAnimationOptionCurveLinear animations:^{
+           // 这个属性是将所有的transForm改变置为空
+           button.transform = CGAffineTransformIdentity;
+       } completion:^(BOOL finished) {
+           [button removeFromSuperview];
+       }];
+        
+    }];
 }
+
 
 @end
