@@ -29,6 +29,7 @@
         self.titleLabel.font = [UIFont systemFontOfSize:15];
         [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self setBackgroundImage:[UIImage imageWithName: @"navigationbar_background"] forState:UIControlStateHighlighted];
+        [self setImage:[UIImage imageNamed:@"navigationbar_arrow_down_os7"] forState:UIControlStateNormal];
         
     }
     return self;
@@ -55,4 +56,15 @@
     return CGRectMake(titleX, titleY, titleW, titleH);
 }
 
+- (void)setTitle:(NSString *)title forState:(UIControlState)state{
+
+    CGSize titleSize = CGSizeMake(MAXFLOAT, self.frame.size.height);
+    CGFloat titleW = [title sizeWithFont:kTextFont maxSize:titleSize].width + kImageW + 10;
+    
+    CGRect frame = self.frame;
+    frame.size.width = titleW;
+    self.frame = frame;
+    
+    [super setTitle:title forState:state];
+}
 @end

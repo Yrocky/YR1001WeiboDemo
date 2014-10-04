@@ -11,17 +11,6 @@
 #import "YRUser.h"
 #import "YRPhotosView.h"
 
-
-/**
- *  转发评论和点赞按钮的尺寸
- *
- */
-#define kButtonW 50
-#define kButtonH 15
-/** 图片的大小*/
-#define kThumbnailPicWH 80
-
-
 @interface YRStatusFrame  ()
 @property (nonatomic ,assign) CGRect lastRect;
 @end
@@ -233,7 +222,9 @@
         }else if(_status.picUrlsMutableArray.count == 4){// 有四张微博配图
         
             
-            for (int i = 0; i <= _status.picUrlsMutableArray.count; i ++) {
+            for (int i = 0; i <= _status.picUr
+ 
+ lsMutableArray.count; i ++) {
                 // % 是取余数的算法， / 是求整数的方法
                 CGFloat picUrlX = kGarp + (i % 2) * (kThumbnailPicGarp + picUrlW);
                 CGFloat picUrlY = CGRectGetMaxY(_textFrame) + kGarp + (i / 2) * (kThumbnailPicGarp + picUrlH);

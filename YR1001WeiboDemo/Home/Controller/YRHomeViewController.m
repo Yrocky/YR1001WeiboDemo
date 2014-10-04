@@ -59,8 +59,6 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
     
-//    // 开始就刷新数据
-//    [self requestWeiboData];
 }
 
 
@@ -82,7 +80,6 @@
     CustomTitleButton *titleButton = [CustomTitleButton titleButton];
     titleButton.frame = CGRectMake(0, 0, 100, 30);
     [titleButton setTitle:@"测试用户" forState:UIControlStateNormal];
-    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down_os7"] forState:UIControlStateNormal];
     titleButton.tag = kDownImageTag;
     [titleButton addTarget:self action:@selector(onTitleButton:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;

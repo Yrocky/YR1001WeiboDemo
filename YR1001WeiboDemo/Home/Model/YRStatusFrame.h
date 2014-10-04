@@ -7,27 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-/**
-*   间距
-*/
-#define kGarp 6.18
-/**
- *  头像的宽高
- */
-#define kAvatarLargeWH 40
-/**
- *  用户姓名字体的大小
- */
-#define kScreenNameHeight 20
-/**
- *  发送时间和发送来源的位子高度限制
- */
-#define kContentH 15
-/**
- *  转发微博的内容宽度限制
- */
-#define kTextW (320 - 2 * kGarp)
-
 @class YRStatus;
 
 @interface YRStatusFrame : NSObject

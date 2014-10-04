@@ -24,10 +24,11 @@
 
 - (void) storeAuthData:(SinaWeibo *)sinaWeibo{
 
-    NSDictionary *authData = [NSDictionary dictionaryWithObjectsAndKeys:sinaWeibo.userID,kAuthUserIDKey,
-                                                                        sinaWeibo.expirationDate,kAuthExpirationDateKey,
-                                                                        sinaWeibo.accessToken,kAuthAccessTokenKey,
-                                                                        nil];
+    NSDictionary *authData ;
+    authData = [NSDictionary dictionaryWithObjectsAndKeys:sinaWeibo.userID,kAuthUserIDKey,
+                                                          sinaWeibo.expirationDate,kAuthExpirationDateKey,
+                                                          sinaWeibo.accessToken,kAuthAccessTokenKey,
+                                                          nil];
     [kNSUD setValue:authData forKey:kAuthSinaWeiboAuthData];
     [kNSUD synchronize];
     

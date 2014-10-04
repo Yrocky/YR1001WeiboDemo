@@ -12,9 +12,6 @@
 #import "MJPhoto.h"
 #import "MJPhotoBrowser.h"
 
-#define kImageWH 80
-#define kPhotoMargin 10
-
 @implementation YRPhotosView
 
 - (id)initWithFrame:(CGRect)frame

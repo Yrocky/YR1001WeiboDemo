@@ -20,7 +20,15 @@
     #import "NSString+Size.h"
     #import "UIImage+Resize.h"
     #import "UIBarButtonItem+Custom.h"
-//    #import "CustomTitleButton.h"
+    #import "CustomTitleButton.h"
     #import "NSString+TimeGap.h"
     #import "MJExtension.h"
+#endif
+
+
+/** 自定义LOG*/
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
 #endif
