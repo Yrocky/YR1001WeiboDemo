@@ -41,7 +41,9 @@
 @property (nonatomic ,retain) UIRefreshControl *refresh;
 
 @property (nonatomic ,retain) NSArray *statusListArray;
+
 @property (nonatomic ,retain) NSDictionary *userInfoDict;
+
 @property (nonatomic ,retain) NSMutableArray *statusFrameArray;
 
 @end
@@ -156,13 +158,13 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 1;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-
     return [_statusFrameArray count];
 }
+
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+//
+//    return [_statusFrameArray count];
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -210,7 +212,8 @@
         
 //        _statusListArray = [result valueForKey:@"statuses"];// 以前的方法
         // 使用第三方库将一个字典里面的键值对赋值给模型里面的属性,这中间不用进行其他修改,现在_statusListArray数组里面装是模型数据
-        _statusListArray = [YRStatus objectArrayWithKeyValuesArray:[result valueForKey:@"status"]];
+        _statusListArray = [NSArray array];
+        _statusListArray = [YRStatus objectArrayWithKeyValuesArray:[result valueForKey:@"statuses"]];
         [self loadData];
 
         [self.tableView reloadData];
@@ -253,6 +256,7 @@
     
     }
     [_refresh endRefreshing];
+    NSLog(@"endRefreshing");
 }
 
 /**
