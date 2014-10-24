@@ -94,6 +94,12 @@
 /**  pop出的左视图和右视图的高 */
 #define kPopRightAndLeftImageH 200
 
+
+static NSString * const kIconClickNoti = @"iconDidClick";
+
+#pragma mark - requestDelegate
+#define kSinaWeiboRequestGetResult @"requestResult"
+#define kSinaWeiboRequestError @"error"
 #endif
 
 

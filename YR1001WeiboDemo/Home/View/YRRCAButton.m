@@ -14,10 +14,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-
+        // 设置文字的水平对其方式
+//        self.contentHorizontalAlignment = []
         self.imageView.contentMode = UIViewContentModeRight;
         self.titleLabel.contentMode = UIViewContentModeLeft;
         self.titleLabel.font = kCreatAndSourceFont;
+        [self setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
         self.adjustsImageWhenHighlighted = NO;// 不要再高亮状态下调整图片样式
         [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
         [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -59,6 +61,8 @@
     return CGRectMake(imageX, imageY, imageW, imageH);
     
 }
+
+//static CGFloat contentW = frame.size.width;
 
 - (CGRect) titleRectForContentRect:(CGRect)contentRect{
 

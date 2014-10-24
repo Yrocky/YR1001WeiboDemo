@@ -17,8 +17,6 @@
 
 @interface YRStatusTopView ()
 
-/** 头像 */
-@property (nonatomic, weak) UIImageView *iconView;
 
 /** 会员图标 */
 @property (nonatomic, weak) UIImageView *vipView;
@@ -54,6 +52,8 @@
         
         // 1. 用户头像
         UIImageView *iconView = [[UIImageView alloc] init];
+        iconView.userInteractionEnabled = YES;
+        [iconView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(iconClick:)]];
         [self addSubview:iconView];
         self.iconView = iconView;
         
@@ -169,6 +169,15 @@
         _retweetView.hidden = YES;
     }
 
+}
+
+#pragma mark -  头像被点击的时候发送一个通知
+- (void) iconClick:(UITapGestureRecognizer *)gesture{
+
+//    [[NSNotificationCenter defaultCenter] postNotificationName:kIconClickNoti object:@{@"statusFrame":_statusFrame}];
+    if ([self.delegate respondsToSelector:@selector(statusTopViewUserIconDidClick:withStatusFrame:)]) {
+        [self.delegate statusTopViewUserIconDidClick:self withStatusFrame:_statusFrame];
+    }
 }
 
 @end

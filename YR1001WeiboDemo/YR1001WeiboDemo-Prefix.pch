@@ -23,12 +23,14 @@
     #import "CustomTitleButton.h"
     #import "NSString+TimeGap.h"
     #import "MJExtension.h"
+    #import "YRWeiboDataBaseContent.h"
+    #import "YRSmartTableViewCell.h"
 #endif
 
 
 /** 自定义LOG*/
 #ifdef DEBUG
-#define NSLog(...) NSLog(__VA_ARGS__)
+#define YRLog(...); NSLog(__VA_ARGS__)
 #else
-#define NSLog(...) {}
+#define YRLog(...); {}
 #endif

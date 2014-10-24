@@ -11,22 +11,31 @@
 
 @class YRStatusFrame;
 @class YRStatusCell;
-
+@class YRStatusToolBar;
+@class YRStatusTopView;
 
 @protocol YRStatusCellDelegate <NSObject>
 
 @optional
 /** cell中的用户头像被点击 */
-- (void) statusCell:(YRStatusCell *)statusCell avatarLargeButtonDidClick:(UIButton *)avatarLargeButton;
+- (void) statusIconDidClick:(YRStatusCell *)statusCell;
 
 @end
 
 @interface YRStatusCell : UITableViewCell
-
-@property (nonatomic ,retain) id<YRStatusCellDelegate> delegate;
+/**
+ *  代理用weak
+ */
+@property (nonatomic ,weak) id<YRStatusCellDelegate> delegate;
 
 @property (nonatomic ,retain) YRStatusFrame *statusFrame;
 
+
+/** 顶部的view */  
+@property (nonatomic, weak) YRStatusTopView *topView;
+
+/** 微博的工具条 */
+@property (nonatomic, weak) YRStatusToolBar *statusToolbar;
 
 
 

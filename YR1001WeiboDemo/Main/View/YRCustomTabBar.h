@@ -13,6 +13,7 @@
 
 @optional
 - (void) customTabBar:(YRCustomTabBar *)customTabBar fromSelectButton:(NSInteger)fromButon toButton:(NSInteger) toButton;
+- (void) customTabbar:(YRCustomTabBar *)customTabbar plusButtonDidClick:(UIButton *)plusButton;
 
 @end
 

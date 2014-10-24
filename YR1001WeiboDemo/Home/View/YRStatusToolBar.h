@@ -27,7 +27,7 @@
 
 @interface YRStatusToolBar : UIImageView
 
-@property (nonatomic ,retain) id<YRStatusToolBarDelegate>delegate;
+@property (nonatomic ,weak) id<YRStatusToolBarDelegate>delegate;
 
 @property (nonatomic ,retain) YRStatus *status;
 @end

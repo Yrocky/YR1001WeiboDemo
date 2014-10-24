@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70274ED19E7D06100EBB8C6 /* YRUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70274EC19E7D06100EBB8C6 /* YRUserViewController.m */; };
+		D70274F019E8341400EBB8C6 /* UIBarButtonItem+BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D70274EF19E8341400EBB8C6 /* UIBarButtonItem+BackButton.m */; };
+		D70274F619E8C18B00EBB8C6 /* YRCurrentUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70274F519E8C18B00EBB8C6 /* YRCurrentUserViewController.m */; };
+		D706596B19EC1AE2007815BC /* YRSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D706596A19EC1AE2007815BC /* YRSetupViewController.m */; };
+		D70835E419E649CE006F4347 /* YRSinaRequestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D70835E319E649CE006F4347 /* YRSinaRequestDelegate.m */; };
+		D70835E819E65E96006F4347 /* YRSendWeiboController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70835E619E65E96006F4347 /* YRSendWeiboController.m */; };
+		D70835E919E65E96006F4347 /* YRSendWeiboController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70835E719E65E96006F4347 /* YRSendWeiboController.xib */; };
+		D708360119E6B943006F4347 /* YRQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D708360019E6B943006F4347 /* YRQRCodeController.m */; };
+		D708360519E6DCAB006F4347 /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = D708360419E6DCAB006F4347 /* ChineseToPinyin.m */; };
+		D71353DB19E139AC0076381E /* YRWeiboDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D71353DA19E139AC0076381E /* YRWeiboDataBase.m */; };
+		D71353E719E140E00076381E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D71353DE19E140E00076381E /* FMDatabase.m */; };
+		D71353E819E140E00076381E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D71353E019E140E00076381E /* FMDatabaseAdditions.m */; };
+		D71353E919E140E00076381E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D71353E219E140E00076381E /* FMDatabasePool.m */; };
+		D71353EA19E140E00076381E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D71353E419E140E00076381E /* FMDatabaseQueue.m */; };
+		D71353EB19E140E00076381E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D71353E619E140E00076381E /* FMResultSet.m */; };
+		D71353ED19E141060076381E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D71353EC19E141060076381E /* libsqlite3.dylib */; };
 		D71C03E519DCE3A1006F3659 /* YRStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03E419DCE3A1006F3659 /* YRStatusTopView.m */; };
 		D71C03E819DCE4B5006F3659 /* YRRetweetedStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03E719DCE4B5006F3659 /* YRRetweetedStatusView.m */; };
 		D71C03EB19DD2594006F3659 /* YRPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C03EA19DD2594006F3659 /* YRPhoto.m */; };
@@ -23,6 +39,32 @@
 		D71C041019DD5845006F3659 /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C040319DD5845006F3659 /* MJPhotoToolbar.m */; };
 		D71C041119DD5845006F3659 /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C040519DD5845006F3659 /* MJPhotoView.m */; };
 		D71C041219DD5845006F3659 /* SDWebImageManager+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = D71C040719DD5845006F3659 /* SDWebImageManager+MJ.m */; };
+		D726137A19E978AF008B75C0 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D726137719E978AF008B75C0 /* SVProgressHUD.bundle */; };
+		D726137B19E978AF008B75C0 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D726137919E978AF008B75C0 /* SVProgressHUD.m */; };
+		D726137E19E9860E008B75C0 /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D726137D19E9860E008B75C0 /* CustomSearchBar.m */; };
+		D726140719EA4F3D008B75C0 /* YRDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D726140619EA4F3D008B75C0 /* YRDiscoverViewController.m */; };
+		D726141419EA68F5008B75C0 /* TSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = D726140A19EA68F5008B75C0 /* TSActionSheet.m */; };
+		D726141519EA68F5008B75C0 /* TSPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = D726140C19EA68F5008B75C0 /* TSPopoverController.m */; };
+		D726141619EA68F5008B75C0 /* TSPopoverPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D726140E19EA68F5008B75C0 /* TSPopoverPopoverView.m */; };
+		D726141719EA68F5008B75C0 /* TSPopoverTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = D726141119EA68F5008B75C0 /* TSPopoverTouchView.m */; };
+		D726141819EA68F5008B75C0 /* UIBarButtonItem+WEPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = D726141319EA68F5008B75C0 /* UIBarButtonItem+WEPopover.m */; };
+		D726141B19EA6ABA008B75C0 /* YRSendChooseController.m in Sources */ = {isa = PBXBuildFile; fileRef = D726141A19EA6ABA008B75C0 /* YRSendChooseController.m */; };
+		D726141F19EA6B2F008B75C0 /* YRChooseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D726141E19EA6B2F008B75C0 /* YRChooseButton.m */; };
+		D726142219EAA01C008B75C0 /* YRCancelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D726142119EAA01C008B75C0 /* YRCancelButton.m */; };
+		D726142519EAB87C008B75C0 /* FPBaseSetupController.m in Sources */ = {isa = PBXBuildFile; fileRef = D726142419EAB87C008B75C0 /* FPBaseSetupController.m */; };
+		D726142A19EABAA1008B75C0 /* YRHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D726142919EABAA1008B75C0 /* YRHeaderView.m */; };
+		D726143219EBA25E008B75C0 /* YRSmartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D726143119EBA25E008B75C0 /* YRSmartTableViewCell.m */; };
+		D726143E19EBAA43008B75C0 /* page_cover_app_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143319EBAA42008B75C0 /* page_cover_app_background@2x.jpg */; };
+		D726143F19EBAA43008B75C0 /* page_cover_book_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143419EBAA42008B75C0 /* page_cover_book_background@2x.jpg */; };
+		D726144019EBAA43008B75C0 /* page_cover_car_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143519EBAA42008B75C0 /* page_cover_car_background@2x.jpg */; };
+		D726144119EBAA43008B75C0 /* page_cover_default_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143619EBAA42008B75C0 /* page_cover_default_background@2x.jpg */; };
+		D726144219EBAA43008B75C0 /* page_cover_game_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143719EBAA42008B75C0 /* page_cover_game_background@2x.jpg */; };
+		D726144319EBAA43008B75C0 /* page_cover_movie_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143819EBAA42008B75C0 /* page_cover_movie_background@2x.jpg */; };
+		D726144419EBAA43008B75C0 /* page_cover_music_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143919EBAA42008B75C0 /* page_cover_music_background@2x.jpg */; };
+		D726144519EBAA43008B75C0 /* page_cover_poi_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143A19EBAA42008B75C0 /* page_cover_poi_background@2x.jpg */; };
+		D726144619EBAA43008B75C0 /* page_cover_radio_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143B19EBAA42008B75C0 /* page_cover_radio_background@2x.jpg */; };
+		D726144719EBAA43008B75C0 /* page_cover_topic_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143C19EBAA42008B75C0 /* page_cover_topic_background@2x.jpg */; };
+		D726144819EBAA43008B75C0 /* page_cover_tv_background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D726143D19EBAA43008B75C0 /* page_cover_tv_background@2x.jpg */; };
 		D7553BA519DB849200E327D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7553BA419DB849200E327D4 /* Foundation.framework */; };
 		D7553BA719DB849200E327D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7553BA619DB849200E327D4 /* CoreGraphics.framework */; };
 		D7553BA919DB849200E327D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7553BA819DB849200E327D4 /* UIKit.framework */; };
@@ -47,7 +89,6 @@
 		D7553C2519DB84BC00E327D4 /* UIBarButtonItem+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = D7553BF319DB84BC00E327D4 /* UIBarButtonItem+Custom.m */; };
 		D7553C2619DB84BC00E327D4 /* YRCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D7553BF519DB84BC00E327D4 /* YRCustomTabBar.m */; };
 		D7553C2719DB84BC00E327D4 /* YRCustomTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7553BF719DB84BC00E327D4 /* YRCustomTabBarButton.m */; };
-		D7553C2819DB84BC00E327D4 /* YRMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7553BFB19DB84BC00E327D4 /* YRMeViewController.m */; };
 		D7553C2B19DB84BC00E327D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7553C0719DB84BC00E327D4 /* Images.xcassets */; };
 		D7553C2E19DB84BC00E327D4 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D7553C0E19DB84BC00E327D4 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D7553C2F19DB84BC00E327D4 /* SinaWeibo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D7553C1019DB84BC00E327D4 /* SinaWeibo.bundle */; };
@@ -85,6 +126,10 @@
 		D7553C9219DBB3A400E327D4 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D7553C8419DBB3A400E327D4 /* UIImageView+WebCache.m */; };
 		D7553C9519DBBDCC00E327D4 /* YRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D7553C9419DBBDCC00E327D4 /* YRUser.m */; };
 		D7F8BAF919DC4A5A008C25FD /* YRStatusToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F8BAF819DC4A5A008C25FD /* YRStatusToolBar.m */; };
+		D7FC54CE19E7CDF9002A4A43 /* FPDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FC54C819E7CDF9002A4A43 /* FPDataCell.m */; };
+		D7FC54CF19E7CDF9002A4A43 /* FPSetupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FC54C919E7CDF9002A4A43 /* FPSetupCell.xib */; };
+		D7FC54D019E7CDF9002A4A43 /* FPTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FC54CB19E7CDF9002A4A43 /* FPTextCell.m */; };
+		D7FC54D119E7CDF9002A4A43 /* FPUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FC54CD19E7CDF9002A4A43 /* FPUserCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +143,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D70274EB19E7D06100EBB8C6 /* YRUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRUserViewController.h; path = User/YRUserViewController.h; sourceTree = "<group>"; };
+		D70274EC19E7D06100EBB8C6 /* YRUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRUserViewController.m; path = User/YRUserViewController.m; sourceTree = "<group>"; };
+		D70274EE19E8341400EBB8C6 /* UIBarButtonItem+BackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BackButton.h"; sourceTree = "<group>"; };
+		D70274EF19E8341400EBB8C6 /* UIBarButtonItem+BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BackButton.m"; sourceTree = "<group>"; };
+		D70274F419E8C18B00EBB8C6 /* YRCurrentUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRCurrentUserViewController.h; sourceTree = "<group>"; };
+		D70274F519E8C18B00EBB8C6 /* YRCurrentUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRCurrentUserViewController.m; sourceTree = "<group>"; };
+		D706596919EC1AE2007815BC /* YRSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRSetupViewController.h; sourceTree = "<group>"; };
+		D706596A19EC1AE2007815BC /* YRSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRSetupViewController.m; sourceTree = "<group>"; };
+		D70835E219E649CE006F4347 /* YRSinaRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRSinaRequestDelegate.h; sourceTree = "<group>"; };
+		D70835E319E649CE006F4347 /* YRSinaRequestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRSinaRequestDelegate.m; sourceTree = "<group>"; };
+		D70835E519E65E96006F4347 /* YRSendWeiboController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRSendWeiboController.h; path = Message/Controller/YRSendWeiboController.h; sourceTree = "<group>"; };
+		D70835E619E65E96006F4347 /* YRSendWeiboController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRSendWeiboController.m; path = Message/Controller/YRSendWeiboController.m; sourceTree = "<group>"; };
+		D70835E719E65E96006F4347 /* YRSendWeiboController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YRSendWeiboController.xib; path = Message/Controller/YRSendWeiboController.xib; sourceTree = "<group>"; };
+		D70835FF19E6B943006F4347 /* YRQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRQRCodeController.h; sourceTree = "<group>"; };
+		D708360019E6B943006F4347 /* YRQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRQRCodeController.m; sourceTree = "<group>"; };
+		D708360319E6DCAB006F4347 /* ChineseToPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyin.h; sourceTree = "<group>"; };
+		D708360419E6DCAB006F4347 /* ChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyin.m; sourceTree = "<group>"; };
+		D71353D919E139AC0076381E /* YRWeiboDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRWeiboDataBase.h; sourceTree = "<group>"; };
+		D71353DA19E139AC0076381E /* YRWeiboDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRWeiboDataBase.m; sourceTree = "<group>"; };
+		D71353DD19E140E00076381E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		D71353DE19E140E00076381E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		D71353DF19E140E00076381E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		D71353E019E140E00076381E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		D71353E119E140E00076381E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		D71353E219E140E00076381E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		D71353E319E140E00076381E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		D71353E419E140E00076381E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		D71353E519E140E00076381E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		D71353E619E140E00076381E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		D71353EC19E141060076381E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D71353EE19E150CA0076381E /* YRWeiboDataBaseContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YRWeiboDataBaseContent.h; sourceTree = "<group>"; };
 		D71C03E319DCE3A1006F3659 /* YRStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRStatusTopView.h; sourceTree = "<group>"; };
 		D71C03E419DCE3A1006F3659 /* YRStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRStatusTopView.m; sourceTree = "<group>"; };
 		D71C03E619DCE4B5006F3659 /* YRRetweetedStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRRetweetedStatusView.h; sourceTree = "<group>"; };
@@ -128,6 +204,47 @@
 		D71C040519DD5845006F3659 /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
 		D71C040619DD5845006F3659 /* SDWebImageManager+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+MJ.h"; sourceTree = "<group>"; };
 		D71C040719DD5845006F3659 /* SDWebImageManager+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+MJ.m"; sourceTree = "<group>"; };
+		D726137719E978AF008B75C0 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		D726137819E978AF008B75C0 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		D726137919E978AF008B75C0 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		D726137C19E9860E008B75C0 /* CustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchBar.h; sourceTree = "<group>"; };
+		D726137D19E9860E008B75C0 /* CustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchBar.m; sourceTree = "<group>"; };
+		D726140519EA4F3D008B75C0 /* YRDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRDiscoverViewController.h; path = Discover/YRDiscoverViewController.h; sourceTree = "<group>"; };
+		D726140619EA4F3D008B75C0 /* YRDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRDiscoverViewController.m; path = Discover/YRDiscoverViewController.m; sourceTree = "<group>"; };
+		D726140919EA68F5008B75C0 /* TSActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSActionSheet.h; sourceTree = "<group>"; };
+		D726140A19EA68F5008B75C0 /* TSActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSActionSheet.m; sourceTree = "<group>"; };
+		D726140B19EA68F5008B75C0 /* TSPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPopoverController.h; sourceTree = "<group>"; };
+		D726140C19EA68F5008B75C0 /* TSPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPopoverController.m; sourceTree = "<group>"; };
+		D726140D19EA68F5008B75C0 /* TSPopoverPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPopoverPopoverView.h; sourceTree = "<group>"; };
+		D726140E19EA68F5008B75C0 /* TSPopoverPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPopoverPopoverView.m; sourceTree = "<group>"; };
+		D726140F19EA68F5008B75C0 /* TSPopoverTouchesDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPopoverTouchesDelegate.h; sourceTree = "<group>"; };
+		D726141019EA68F5008B75C0 /* TSPopoverTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPopoverTouchView.h; sourceTree = "<group>"; };
+		D726141119EA68F5008B75C0 /* TSPopoverTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPopoverTouchView.m; sourceTree = "<group>"; };
+		D726141219EA68F5008B75C0 /* UIBarButtonItem+WEPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WEPopover.h"; sourceTree = "<group>"; };
+		D726141319EA68F5008B75C0 /* UIBarButtonItem+WEPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WEPopover.m"; sourceTree = "<group>"; };
+		D726141919EA6ABA008B75C0 /* YRSendChooseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRSendChooseController.h; path = SenderWeibo/YRSendChooseController.h; sourceTree = "<group>"; };
+		D726141A19EA6ABA008B75C0 /* YRSendChooseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRSendChooseController.m; path = SenderWeibo/YRSendChooseController.m; sourceTree = "<group>"; };
+		D726141D19EA6B2F008B75C0 /* YRChooseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRChooseButton.h; path = SenderWeibo/YRChooseButton.h; sourceTree = "<group>"; };
+		D726141E19EA6B2F008B75C0 /* YRChooseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRChooseButton.m; path = SenderWeibo/YRChooseButton.m; sourceTree = "<group>"; };
+		D726142019EAA01C008B75C0 /* YRCancelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRCancelButton.h; path = SenderWeibo/YRCancelButton.h; sourceTree = "<group>"; };
+		D726142119EAA01C008B75C0 /* YRCancelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRCancelButton.m; path = SenderWeibo/YRCancelButton.m; sourceTree = "<group>"; };
+		D726142319EAB87C008B75C0 /* FPBaseSetupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FPBaseSetupController.h; path = ../../FPBaseSetupController.h; sourceTree = "<group>"; };
+		D726142419EAB87C008B75C0 /* FPBaseSetupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FPBaseSetupController.m; path = ../../FPBaseSetupController.m; sourceTree = "<group>"; };
+		D726142819EABAA1008B75C0 /* YRHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRHeaderView.h; path = User/YRHeaderView.h; sourceTree = "<group>"; };
+		D726142919EABAA1008B75C0 /* YRHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRHeaderView.m; path = User/YRHeaderView.m; sourceTree = "<group>"; };
+		D726143019EBA25E008B75C0 /* YRSmartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRSmartTableViewCell.h; path = ../User/YRSmartTableViewCell.h; sourceTree = "<group>"; };
+		D726143119EBA25E008B75C0 /* YRSmartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRSmartTableViewCell.m; path = ../User/YRSmartTableViewCell.m; sourceTree = "<group>"; };
+		D726143319EBAA42008B75C0 /* page_cover_app_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_app_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143419EBAA42008B75C0 /* page_cover_book_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_book_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143519EBAA42008B75C0 /* page_cover_car_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_car_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143619EBAA42008B75C0 /* page_cover_default_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_default_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143719EBAA42008B75C0 /* page_cover_game_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_game_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143819EBAA42008B75C0 /* page_cover_movie_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_movie_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143919EBAA42008B75C0 /* page_cover_music_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_music_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143A19EBAA42008B75C0 /* page_cover_poi_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_poi_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143B19EBAA42008B75C0 /* page_cover_radio_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_radio_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143C19EBAA42008B75C0 /* page_cover_topic_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_topic_background@2x.jpg"; sourceTree = "<group>"; };
+		D726143D19EBAA43008B75C0 /* page_cover_tv_background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "page_cover_tv_background@2x.jpg"; sourceTree = "<group>"; };
 		D7553BA119DB849200E327D4 /* YR1001WeiboDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YR1001WeiboDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7553BA419DB849200E327D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7553BA619DB849200E327D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -160,8 +277,8 @@
 		D7553BE919DB84BC00E327D4 /* ContentDefin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentDefin.h; sourceTree = "<group>"; };
 		D7553BEB19DB84BC00E327D4 /* YRMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRMainViewController.h; sourceTree = "<group>"; };
 		D7553BEC19DB84BC00E327D4 /* YRMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRMainViewController.m; sourceTree = "<group>"; };
-		D7553BED19DB84BC00E327D4 /* YRSinaWeiboDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRSinaWeiboDelegate.h; sourceTree = "<group>"; };
-		D7553BEE19DB84BC00E327D4 /* YRSinaWeiboDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRSinaWeiboDelegate.m; sourceTree = "<group>"; };
+		D7553BED19DB84BC00E327D4 /* YRSinaWeiboDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRSinaWeiboDelegate.h; path = Contoller/YRSinaWeiboDelegate.h; sourceTree = "<group>"; };
+		D7553BEE19DB84BC00E327D4 /* YRSinaWeiboDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRSinaWeiboDelegate.m; path = Contoller/YRSinaWeiboDelegate.m; sourceTree = "<group>"; };
 		D7553BEF19DB84BC00E327D4 /* YRViewControllerMangers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRViewControllerMangers.h; sourceTree = "<group>"; };
 		D7553BF019DB84BC00E327D4 /* YRViewControllerMangers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRViewControllerMangers.m; sourceTree = "<group>"; };
 		D7553BF219DB84BC00E327D4 /* UIBarButtonItem+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Custom.h"; sourceTree = "<group>"; };
@@ -170,8 +287,6 @@
 		D7553BF519DB84BC00E327D4 /* YRCustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRCustomTabBar.m; sourceTree = "<group>"; };
 		D7553BF619DB84BC00E327D4 /* YRCustomTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRCustomTabBarButton.h; sourceTree = "<group>"; };
 		D7553BF719DB84BC00E327D4 /* YRCustomTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRCustomTabBarButton.m; sourceTree = "<group>"; };
-		D7553BFA19DB84BC00E327D4 /* YRMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRMeViewController.h; sourceTree = "<group>"; };
-		D7553BFB19DB84BC00E327D4 /* YRMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRMeViewController.m; sourceTree = "<group>"; };
 		D7553C0719DB84BC00E327D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D7553C0D19DB84BC00E327D4 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		D7553C0E19DB84BC00E327D4 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -247,6 +362,13 @@
 		D7553C9419DBBDCC00E327D4 /* YRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRUser.m; sourceTree = "<group>"; };
 		D7F8BAF719DC4A5A008C25FD /* YRStatusToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRStatusToolBar.h; sourceTree = "<group>"; };
 		D7F8BAF819DC4A5A008C25FD /* YRStatusToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRStatusToolBar.m; sourceTree = "<group>"; };
+		D7FC54C719E7CDF9002A4A43 /* FPDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPDataCell.h; sourceTree = "<group>"; };
+		D7FC54C819E7CDF9002A4A43 /* FPDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPDataCell.m; sourceTree = "<group>"; };
+		D7FC54C919E7CDF9002A4A43 /* FPSetupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPSetupCell.xib; sourceTree = "<group>"; };
+		D7FC54CA19E7CDF9002A4A43 /* FPTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTextCell.h; sourceTree = "<group>"; };
+		D7FC54CB19E7CDF9002A4A43 /* FPTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTextCell.m; sourceTree = "<group>"; };
+		D7FC54CC19E7CDF9002A4A43 /* FPUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPUserCell.h; sourceTree = "<group>"; };
+		D7FC54CD19E7CDF9002A4A43 /* FPUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPUserCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +376,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71353ED19E141060076381E /* libsqlite3.dylib in Frameworks */,
 				D7553BA719DB849200E327D4 /* CoreGraphics.framework in Frameworks */,
 				D7553BA919DB849200E327D4 /* UIKit.framework in Frameworks */,
 				D7553BA519DB849200E327D4 /* Foundation.framework in Frameworks */,
@@ -273,6 +396,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D70274EA19E7D02300EBB8C6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D726142719EABA4B008B75C0 /* Controller */,
+				D726142619EABA44008B75C0 /* View */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		D70835E019E6495F006F4347 /* YRDataBase */ = {
+			isa = PBXGroup;
+			children = (
+				D71353D919E139AC0076381E /* YRWeiboDataBase.h */,
+				D71353DA19E139AC0076381E /* YRWeiboDataBase.m */,
+				D7553BE919DB84BC00E327D4 /* ContentDefin.h */,
+				D71353EE19E150CA0076381E /* YRWeiboDataBaseContent.h */,
+			);
+			name = YRDataBase;
+			sourceTree = "<group>";
+		};
+		D70835E119E64980006F4347 /* SinaWeiboDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D7553BED19DB84BC00E327D4 /* YRSinaWeiboDelegate.h */,
+				D7553BEE19DB84BC00E327D4 /* YRSinaWeiboDelegate.m */,
+				D70835E219E649CE006F4347 /* YRSinaRequestDelegate.h */,
+				D70835E319E649CE006F4347 /* YRSinaRequestDelegate.m */,
+			);
+			name = SinaWeiboDelegate;
+			sourceTree = "<group>";
+		};
+		D708360219E6DCAB006F4347 /* Zn2En */ = {
+			isa = PBXGroup;
+			children = (
+				D708360319E6DCAB006F4347 /* ChineseToPinyin.h */,
+				D708360419E6DCAB006F4347 /* ChineseToPinyin.m */,
+			);
+			path = Zn2En;
+			sourceTree = "<group>";
+		};
+		D71353DC19E140E00076381E /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				D71353DD19E140E00076381E /* FMDatabase.h */,
+				D71353DE19E140E00076381E /* FMDatabase.m */,
+				D71353DF19E140E00076381E /* FMDatabaseAdditions.h */,
+				D71353E019E140E00076381E /* FMDatabaseAdditions.m */,
+				D71353E119E140E00076381E /* FMDatabasePool.h */,
+				D71353E219E140E00076381E /* FMDatabasePool.m */,
+				D71353E319E140E00076381E /* FMDatabaseQueue.h */,
+				D71353E419E140E00076381E /* FMDatabaseQueue.m */,
+				D71353E519E140E00076381E /* FMResultSet.h */,
+				D71353E619E140E00076381E /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		D71C03F219DD5845006F3659 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +489,93 @@
 			path = ../Message/MJPhotoBrowser;
 			sourceTree = "<group>";
 		};
+		D72036DA19EE5F1500868A9B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D70835E519E65E96006F4347 /* YRSendWeiboController.h */,
+				D70835E619E65E96006F4347 /* YRSendWeiboController.m */,
+				D70835E719E65E96006F4347 /* YRSendWeiboController.xib */,
+				D726141919EA6ABA008B75C0 /* YRSendChooseController.h */,
+				D726141A19EA6ABA008B75C0 /* YRSendChooseController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D726137519E95691008B75C0 /* SenderWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				D72036DA19EE5F1500868A9B /* Controller */,
+				D726141C19EA6B0E008B75C0 /* View */,
+			);
+			name = SenderWeibo;
+			sourceTree = "<group>";
+		};
+		D726137619E978AF008B75C0 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				D726137719E978AF008B75C0 /* SVProgressHUD.bundle */,
+				D726137819E978AF008B75C0 /* SVProgressHUD.h */,
+				D726137919E978AF008B75C0 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		D726140419EA4EE6008B75C0 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				D726140519EA4F3D008B75C0 /* YRDiscoverViewController.h */,
+				D726140619EA4F3D008B75C0 /* YRDiscoverViewController.m */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		D726140819EA68F5008B75C0 /* TSPopover */ = {
+			isa = PBXGroup;
+			children = (
+				D726140919EA68F5008B75C0 /* TSActionSheet.h */,
+				D726140A19EA68F5008B75C0 /* TSActionSheet.m */,
+				D726140B19EA68F5008B75C0 /* TSPopoverController.h */,
+				D726140C19EA68F5008B75C0 /* TSPopoverController.m */,
+				D726140D19EA68F5008B75C0 /* TSPopoverPopoverView.h */,
+				D726140E19EA68F5008B75C0 /* TSPopoverPopoverView.m */,
+				D726140F19EA68F5008B75C0 /* TSPopoverTouchesDelegate.h */,
+				D726141019EA68F5008B75C0 /* TSPopoverTouchView.h */,
+				D726141119EA68F5008B75C0 /* TSPopoverTouchView.m */,
+				D726141219EA68F5008B75C0 /* UIBarButtonItem+WEPopover.h */,
+				D726141319EA68F5008B75C0 /* UIBarButtonItem+WEPopover.m */,
+			);
+			path = TSPopover;
+			sourceTree = "<group>";
+		};
+		D726141C19EA6B0E008B75C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D726141D19EA6B2F008B75C0 /* YRChooseButton.h */,
+				D726141E19EA6B2F008B75C0 /* YRChooseButton.m */,
+				D726142019EAA01C008B75C0 /* YRCancelButton.h */,
+				D726142119EAA01C008B75C0 /* YRCancelButton.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D726142619EABA44008B75C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D726142819EABAA1008B75C0 /* YRHeaderView.h */,
+				D726142919EABAA1008B75C0 /* YRHeaderView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D726142719EABA4B008B75C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D70274EB19E7D06100EBB8C6 /* YRUserViewController.h */,
+				D70274EC19E7D06100EBB8C6 /* YRUserViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		D7553B9819DB849200E327D4 = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +598,7 @@
 		D7553BA319DB849200E327D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D71353EC19E141060076381E /* libsqlite3.dylib */,
 				D7553BA419DB849200E327D4 /* Foundation.framework */,
 				D7553BA619DB849200E327D4 /* CoreGraphics.framework */,
 				D7553BA819DB849200E327D4 /* UIKit.framework */,
@@ -349,6 +617,9 @@
 				D7553BD319DB84BC00E327D4 /* Home */,
 				D7553BF819DB84BC00E327D4 /* Me */,
 				D7553BFE19DB84BC00E327D4 /* Message */,
+				D726140419EA4EE6008B75C0 /* Discover */,
+				D70274EA19E7D02300EBB8C6 /* User */,
+				D726137519E95691008B75C0 /* SenderWeibo */,
 				D7553C0B19DB84BC00E327D4 /* Lib */,
 				D7553C1819DB84BC00E327D4 /* Tool */,
 				D7553BAB19DB849200E327D4 /* Supporting Files */,
@@ -427,14 +698,14 @@
 				D7553BDB19DB84BC00E327D4 /* YRStatusCell.m */,
 				D71C03E319DCE3A1006F3659 /* YRStatusTopView.h */,
 				D71C03E419DCE3A1006F3659 /* YRStatusTopView.m */,
+				D7F8BAF719DC4A5A008C25FD /* YRStatusToolBar.h */,
+				D7F8BAF819DC4A5A008C25FD /* YRStatusToolBar.m */,
 				D71C03E619DCE4B5006F3659 /* YRRetweetedStatusView.h */,
 				D71C03E719DCE4B5006F3659 /* YRRetweetedStatusView.m */,
 				D71C03EC19DD26D0006F3659 /* YRPhotosView.h */,
 				D71C03ED19DD26D1006F3659 /* YRPhotosView.m */,
 				D71C03EF19DD26E0006F3659 /* YRPhotoView.h */,
 				D71C03F019DD26E0006F3659 /* YRPhotoView.m */,
-				D7F8BAF719DC4A5A008C25FD /* YRStatusToolBar.h */,
-				D7F8BAF819DC4A5A008C25FD /* YRStatusToolBar.m */,
 				D7553BDF19DB84BC00E327D4 /* YRRCAButton.h */,
 				D7553BE019DB84BC00E327D4 /* YRRCAButton.m */,
 			);
@@ -471,7 +742,8 @@
 		D7553BE819DB84BC00E327D4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D7553BE919DB84BC00E327D4 /* ContentDefin.h */,
+				D70835E119E64980006F4347 /* SinaWeiboDelegate */,
+				D70835E019E6495F006F4347 /* YRDataBase */,
 				D7553BEA19DB84BC00E327D4 /* Contoller */,
 				D7553BF119DB84BC00E327D4 /* View */,
 			);
@@ -483,8 +755,6 @@
 			children = (
 				D7553BEB19DB84BC00E327D4 /* YRMainViewController.h */,
 				D7553BEC19DB84BC00E327D4 /* YRMainViewController.m */,
-				D7553BED19DB84BC00E327D4 /* YRSinaWeiboDelegate.h */,
-				D7553BEE19DB84BC00E327D4 /* YRSinaWeiboDelegate.m */,
 				D7553BEF19DB84BC00E327D4 /* YRViewControllerMangers.h */,
 				D7553BF019DB84BC00E327D4 /* YRViewControllerMangers.m */,
 			);
@@ -519,8 +789,12 @@
 		D7553BF919DB84BC00E327D4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D7553BFA19DB84BC00E327D4 /* YRMeViewController.h */,
-				D7553BFB19DB84BC00E327D4 /* YRMeViewController.m */,
+				D70274F419E8C18B00EBB8C6 /* YRCurrentUserViewController.h */,
+				D70274F519E8C18B00EBB8C6 /* YRCurrentUserViewController.m */,
+				D706596919EC1AE2007815BC /* YRSetupViewController.h */,
+				D706596A19EC1AE2007815BC /* YRSetupViewController.m */,
+				D726142319EAB87C008B75C0 /* FPBaseSetupController.h */,
+				D726142419EAB87C008B75C0 /* FPBaseSetupController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -535,6 +809,7 @@
 		D7553BFD19DB84BC00E327D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D7FC54C619E7CD82002A4A43 /* AddFP */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -554,6 +829,8 @@
 			children = (
 				D7553C3A19DB874800E327D4 /* YRMessageViewController.h */,
 				D7553C3B19DB874800E327D4 /* YRMessageViewController.m */,
+				D70835FF19E6B943006F4347 /* YRQRCodeController.h */,
+				D708360019E6B943006F4347 /* YRQRCodeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -568,6 +845,8 @@
 		D7553C0119DB84BC00E327D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D726137C19E9860E008B75C0 /* CustomSearchBar.h */,
+				D726137D19E9860E008B75C0 /* CustomSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,6 +854,17 @@
 		D7553C0219DB84BC00E327D4 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				D726143319EBAA42008B75C0 /* page_cover_app_background@2x.jpg */,
+				D726143419EBAA42008B75C0 /* page_cover_book_background@2x.jpg */,
+				D726143519EBAA42008B75C0 /* page_cover_car_background@2x.jpg */,
+				D726143619EBAA42008B75C0 /* page_cover_default_background@2x.jpg */,
+				D726143719EBAA42008B75C0 /* page_cover_game_background@2x.jpg */,
+				D726143819EBAA42008B75C0 /* page_cover_movie_background@2x.jpg */,
+				D726143919EBAA42008B75C0 /* page_cover_music_background@2x.jpg */,
+				D726143A19EBAA42008B75C0 /* page_cover_poi_background@2x.jpg */,
+				D726143B19EBAA42008B75C0 /* page_cover_radio_background@2x.jpg */,
+				D726143C19EBAA42008B75C0 /* page_cover_topic_background@2x.jpg */,
+				D726143D19EBAA43008B75C0 /* page_cover_tv_background@2x.jpg */,
 				D7553C0719DB84BC00E327D4 /* Images.xcassets */,
 			);
 			path = Other;
@@ -583,6 +873,10 @@
 		D7553C0B19DB84BC00E327D4 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				D726140819EA68F5008B75C0 /* TSPopover */,
+				D726137619E978AF008B75C0 /* SVProgressHUD */,
+				D708360219E6DCAB006F4347 /* Zn2En */,
+				D71353DC19E140E00076381E /* FMDB */,
 				D71C03F219DD5845006F3659 /* MBProgressHUD */,
 				D71C03F819DD5845006F3659 /* MJPhotoBrowser */,
 				D7553C6719DBB3A400E327D4 /* SDWebImage */,
@@ -622,6 +916,8 @@
 		D7553C1819DB84BC00E327D4 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				D726143019EBA25E008B75C0 /* YRSmartTableViewCell.h */,
+				D726143119EBA25E008B75C0 /* YRSmartTableViewCell.m */,
 				D7553C4019DB884C00E327D4 /* NSString+Size.h */,
 				D7553C4119DB884C00E327D4 /* NSString+Size.m */,
 				D7553C1919DB84BC00E327D4 /* NSString+TimeGap.h */,
@@ -703,6 +999,23 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		D7FC54C619E7CD82002A4A43 /* AddFP */ = {
+			isa = PBXGroup;
+			children = (
+				D70274EE19E8341400EBB8C6 /* UIBarButtonItem+BackButton.h */,
+				D70274EF19E8341400EBB8C6 /* UIBarButtonItem+BackButton.m */,
+				D7FC54C719E7CDF9002A4A43 /* FPDataCell.h */,
+				D7FC54C819E7CDF9002A4A43 /* FPDataCell.m */,
+				D7FC54C919E7CDF9002A4A43 /* FPSetupCell.xib */,
+				D7FC54CA19E7CDF9002A4A43 /* FPTextCell.h */,
+				D7FC54CB19E7CDF9002A4A43 /* FPTextCell.m */,
+				D7FC54CC19E7CDF9002A4A43 /* FPUserCell.h */,
+				D7FC54CD19E7CDF9002A4A43 /* FPUserCell.m */,
+			);
+			name = AddFP;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -780,11 +1093,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D726144219EBAA43008B75C0 /* page_cover_game_background@2x.jpg in Resources */,
+				D726143F19EBAA43008B75C0 /* page_cover_book_background@2x.jpg in Resources */,
+				D726144319EBAA43008B75C0 /* page_cover_movie_background@2x.jpg in Resources */,
+				D726144019EBAA43008B75C0 /* page_cover_car_background@2x.jpg in Resources */,
+				D726144519EBAA43008B75C0 /* page_cover_poi_background@2x.jpg in Resources */,
 				D7553C2F19DB84BC00E327D4 /* SinaWeibo.bundle in Resources */,
+				D726144819EBAA43008B75C0 /* page_cover_tv_background@2x.jpg in Resources */,
+				D726144419EBAA43008B75C0 /* page_cover_music_background@2x.jpg in Resources */,
+				D726144619EBAA43008B75C0 /* page_cover_radio_background@2x.jpg in Resources */,
 				D71C040919DD5845006F3659 /* MBProgressHUD.bundle in Resources */,
 				D7553C2B19DB84BC00E327D4 /* Images.xcassets in Resources */,
+				D726137A19E978AF008B75C0 /* SVProgressHUD.bundle in Resources */,
 				D7553BAF19DB849200E327D4 /* InfoPlist.strings in Resources */,
+				D726144119EBAA43008B75C0 /* page_cover_default_background@2x.jpg in Resources */,
 				D71C040C19DD5845006F3659 /* MJPhotoBrowser.bundle in Resources */,
+				D726143E19EBAA43008B75C0 /* page_cover_app_background@2x.jpg in Resources */,
+				D726144719EBAA43008B75C0 /* page_cover_topic_background@2x.jpg in Resources */,
+				D70835E919E65E96006F4347 /* YRSendWeiboController.xib in Resources */,
+				D7FC54CF19E7CDF9002A4A43 /* FPSetupCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,14 +1133,22 @@
 				D71C041019DD5845006F3659 /* MJPhotoToolbar.m in Sources */,
 				D71C03F119DD26E0006F3659 /* YRPhotoView.m in Sources */,
 				D7553C6019DB98CB00E327D4 /* MJMember.m in Sources */,
+				D726141619EA68F5008B75C0 /* TSPopoverPopoverView.m in Sources */,
 				D7553C6219DB98CB00E327D4 /* MJType.m in Sources */,
+				D726141419EA68F5008B75C0 /* TSActionSheet.m in Sources */,
 				D7553C3919DB86A500E327D4 /* UIImage+Resize.m in Sources */,
 				D7553C1C19DB84BC00E327D4 /* YRStatus.m in Sources */,
+				D7FC54D019E7CDF9002A4A43 /* FPTextCell.m in Sources */,
 				D7553C8819DBB3A400E327D4 /* SDWebImageCompat.m in Sources */,
 				D7553C3319DB84BC00E327D4 /* NSString+TimeGap.m in Sources */,
+				D70274F019E8341400EBB8C6 /* UIBarButtonItem+BackButton.m in Sources */,
 				D7553C4519DB88F200E327D4 /* CustomTitleButton.m in Sources */,
+				D726137B19E978AF008B75C0 /* SVProgressHUD.m in Sources */,
+				D70274ED19E7D06100EBB8C6 /* YRUserViewController.m in Sources */,
 				D7553C8E19DBB3A400E327D4 /* UIButton+WebCache.m in Sources */,
+				D726142A19EABAA1008B75C0 /* YRHeaderView.m in Sources */,
 				D7553C5E19DB98CB00E327D4 /* MJArgument.m in Sources */,
+				D726137E19E9860E008B75C0 /* CustomSearchBar.m in Sources */,
 				D7553C1D19DB84BC00E327D4 /* YRStatusCell.m in Sources */,
 				D7553C8C19DBB3A400E327D4 /* SDWebImageManager.m in Sources */,
 				D7553C2E19DB84BC00E327D4 /* JSONKit.m in Sources */,
@@ -821,13 +1156,19 @@
 				D7553C2419DB84BC00E327D4 /* YRViewControllerMangers.m in Sources */,
 				D71C03E819DCE4B5006F3659 /* YRRetweetedStatusView.m in Sources */,
 				D7553C8919DBB3A400E327D4 /* SDWebImageDecoder.m in Sources */,
+				D7FC54CE19E7CDF9002A4A43 /* FPDataCell.m in Sources */,
 				D7553C6319DB98CB00E327D4 /* MJTypeEncoding.m in Sources */,
+				D706596B19EC1AE2007815BC /* YRSetupViewController.m in Sources */,
+				D726143219EBA25E008B75C0 /* YRSmartTableViewCell.m in Sources */,
 				D7553C1F19DB84BC00E327D4 /* YRRCAButton.m in Sources */,
+				D726142519EAB87C008B75C0 /* FPBaseSetupController.m in Sources */,
+				D708360519E6DCAB006F4347 /* ChineseToPinyin.m in Sources */,
 				D71C03E519DCE3A1006F3659 /* YRStatusTopView.m in Sources */,
 				D7553C3619DB85C800E327D4 /* XMLDictionary.m in Sources */,
 				D7553C2219DB84BC00E327D4 /* YRMainViewController.m in Sources */,
 				D7553C9119DBB3A400E327D4 /* UIImage+WebP.m in Sources */,
 				D7553BB119DB849200E327D4 /* main.m in Sources */,
+				D726142219EAA01C008B75C0 /* YRCancelButton.m in Sources */,
 				D71C03EB19DD2594006F3659 /* YRPhoto.m in Sources */,
 				D7553C8B19DBB3A400E327D4 /* SDWebImageDownloaderOperation.m in Sources */,
 				D71C040E19DD5845006F3659 /* MJPhotoLoadingView.m in Sources */,
@@ -838,27 +1179,41 @@
 				D7553C1E19DB84BC00E327D4 /* YRStatusFrame.m in Sources */,
 				D71C03EE19DD26D1006F3659 /* YRPhotosView.m in Sources */,
 				D7553C5F19DB98CB00E327D4 /* MJIvar.m in Sources */,
+				D7FC54D119E7CDF9002A4A43 /* FPUserCell.m in Sources */,
 				D7553C4219DB884C00E327D4 /* NSString+Size.m in Sources */,
 				D71C041119DD5845006F3659 /* MJPhotoView.m in Sources */,
 				D7F8BAF919DC4A5A008C25FD /* YRStatusToolBar.m in Sources */,
 				D7553C9519DBBDCC00E327D4 /* YRUser.m in Sources */,
 				D7553C3219DB84BC00E327D4 /* SinaWeiboRequest.m in Sources */,
 				D71C040A19DD5845006F3659 /* MBProgressHUD.m in Sources */,
+				D726141B19EA6ABA008B75C0 /* YRSendChooseController.m in Sources */,
+				D71353EB19E140E00076381E /* FMResultSet.m in Sources */,
 				D7553C3019DB84BC00E327D4 /* SinaWeibo.m in Sources */,
+				D726140719EA4F3D008B75C0 /* YRDiscoverViewController.m in Sources */,
+				D726141819EA68F5008B75C0 /* UIBarButtonItem+WEPopover.m in Sources */,
 				D7553C6519DB98CB00E327D4 /* NSObject+MJKeyValue.m in Sources */,
+				D70835E419E649CE006F4347 /* YRSinaRequestDelegate.m in Sources */,
 				D71C040D19DD5845006F3659 /* MJPhotoBrowser.m in Sources */,
+				D726141F19EA6B2F008B75C0 /* YRChooseButton.m in Sources */,
 				D71C040819DD5845006F3659 /* MBProgressHUD+MJ.m in Sources */,
+				D70835E819E65E96006F4347 /* YRSendWeiboController.m in Sources */,
+				D70274F619E8C18B00EBB8C6 /* YRCurrentUserViewController.m in Sources */,
+				D726141519EA68F5008B75C0 /* TSPopoverController.m in Sources */,
+				D71353EA19E140E00076381E /* FMDatabaseQueue.m in Sources */,
 				D71C040F19DD5845006F3659 /* MJPhotoProgressView.m in Sources */,
 				D7553C2319DB84BC00E327D4 /* YRSinaWeiboDelegate.m in Sources */,
-				D7553C2819DB84BC00E327D4 /* YRMeViewController.m in Sources */,
 				D7553C6619DB98CB00E327D4 /* NSObject+MJMember.m in Sources */,
+				D71353E919E140E00076381E /* FMDatabasePool.m in Sources */,
 				D7553C6119DB98CB00E327D4 /* MJMethod.m in Sources */,
 				D7553C2719DB84BC00E327D4 /* YRCustomTabBarButton.m in Sources */,
 				D7553C8A19DBB3A400E327D4 /* SDWebImageDownloader.m in Sources */,
 				D7553C3C19DB874800E327D4 /* YRMessageViewController.m in Sources */,
 				D7553C8F19DBB3A400E327D4 /* UIImage+GIF.m in Sources */,
 				D7553C1B19DB84BC00E327D4 /* YRHomeViewController.m in Sources */,
+				D71353E819E140E00076381E /* FMDatabaseAdditions.m in Sources */,
 				D71C040B19DD5845006F3659 /* MJPhoto.m in Sources */,
+				D708360119E6B943006F4347 /* YRQRCodeController.m in Sources */,
+				D71353DB19E139AC0076381E /* YRWeiboDataBase.m in Sources */,
 				D7553C8719DBB3A400E327D4 /* SDImageCache.m in Sources */,
 				D7553C8619DBB3A400E327D4 /* NSData+ImageContentType.m in Sources */,
 				D7553C2119DB84BC00E327D4 /* YRLoginViewController.m in Sources */,
@@ -867,6 +1222,8 @@
 				D7553C9219DBB3A400E327D4 /* UIImageView+WebCache.m in Sources */,
 				D71C041219DD5845006F3659 /* SDWebImageManager+MJ.m in Sources */,
 				D7553C3119DB84BC00E327D4 /* SinaWeiboAuthorizeView.m in Sources */,
+				D726141719EA68F5008B75C0 /* TSPopoverTouchView.m in Sources */,
+				D71353E719E140E00076381E /* FMDatabase.m in Sources */,
 				D7553C2619DB84BC00E327D4 /* YRCustomTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

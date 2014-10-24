@@ -16,4 +16,18 @@
     return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size;
     
 }
+
++ (NSString *) stringWithCount:(long)count{
+
+    NSString *friendStr;
+
+    if (count > 10000l) {
+        count = count / 10000;
+        friendStr = [NSString stringWithFormat:@"%ld万",count];
+    }else{
+        
+        friendStr = [NSString stringWithFormat:@"%ld",count];
+    }
+    return friendStr;
+}
 @end

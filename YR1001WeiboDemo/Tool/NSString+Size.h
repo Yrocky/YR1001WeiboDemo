@@ -12,4 +12,5 @@
 
 - (CGSize) sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
 
++ (NSString *) stringWithCount:(long)count;
 @end

@@ -11,13 +11,8 @@
 #import "YRStatusToolBar.h"
 #import "YRStatusTopView.h"
 
-@interface YRStatusCell ()
+@interface YRStatusCell ()<YRStatusTopViewDelegate>
 
-/** 顶部的view */  //这里为什么使用weak？
-@property (nonatomic, weak) YRStatusTopView *topView;
-
-/** 微博的工具条 */
-@property (nonatomic, weak) YRStatusToolBar *statusToolbar;
 
 @end
 
@@ -38,7 +33,7 @@
 
 - (id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
 
-    if ( self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]){
+    if ( self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]){
     
         // 1. 添加原创微博控件
         [self setTopStatusView];
@@ -57,8 +52,8 @@
     //  原创微博底部的视图，是个UIImageView
      YRStatusTopView *topView = [[YRStatusTopView alloc] init];
     [self.contentView addSubview:topView];
+    topView.delegate = self;
     self.topView = topView;
- 
 }
 
 - (void) setBottomView{
@@ -66,7 +61,6 @@
     YRStatusToolBar *statusToolbar = [[YRStatusToolBar alloc] init];
     [self.contentView addSubview:statusToolbar];
     self.statusToolbar = statusToolbar;
-    
 }
 
 - (void)setFrame:(CGRect)frame{
@@ -80,7 +74,8 @@
 - (void)setStatusFrame:(YRStatusFrame *)statusFrame{
 
     _statusFrame = statusFrame;
-    
+
+//    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     // 1. 设置原创微博
     [self setStatusFrame];
     
@@ -101,5 +96,13 @@
     _statusToolbar.frame = _statusFrame.statusToolbarF;
     _statusToolbar.status = _statusFrame.status;
 
+}
+
+#pragma mark - cell的代理
+- (void)statusTopViewUserIconDidClick:(YRStatusTopView *)topView withStatusFrame:(YRStatusFrame *)statusFrame{
+
+    if ([self.delegate respondsToSelector:@selector(statusIconDidClick:)]) {
+        [self.delegate statusIconDidClick:self];
+    }
 }
 @end

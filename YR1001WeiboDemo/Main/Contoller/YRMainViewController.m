@@ -9,11 +9,13 @@
 #import "YRMainViewController.h"
 #import "YRHomeViewController.h"
 #import "YRMessageViewController.h"
-#import "YRMeViewController.h"
+#import "YRCurrentUserViewController.h"
 #import "YRCustomTabBar.h"
+#import "YRSendChooseController.h"
+#import "YRDiscoverViewController.h"
 
 
-@interface YRMainViewController () <YRCustomTabBarDelegate>
+@interface YRMainViewController () <YRCustomTabBarDelegate,YRSendChooseControllerDelegate>
 
 @property (nonatomic ,retain) YRCustomTabBar *customTabBar;
 @end
@@ -42,10 +44,26 @@
     YRMessageViewController *message = [[YRMessageViewController alloc] init];
     [self viewController:message title:@"信息" imageName:@"tabbar_message_center_os7" selectedImageName:@"tabbar_message_center_selected_os7"];
     
-    YRMeViewController *me = [[YRMeViewController alloc] init];
-    [self viewController:me title:@"我" imageName:@"tabbar_profile_os7" selectedImageName:@"tabbar_profile_selected_os7"];
+    YRDiscoverViewController *discover = [[YRDiscoverViewController alloc] init];
+    [self viewController:discover title:@"广场" imageName:@"tabbar_discover_os7" selectedImageName:@"tabbar_discover_selected_os7"];
+    
+    YRCurrentUserViewController *currentUser = [[YRCurrentUserViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    [self viewController:currentUser title:@"我" imageName:@"tabbar_profile_os7" selectedImageName:@"tabbar_profile_selected_os7"];
 }
 
+- (void) viewController:(UIViewController *)viewControlller title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedName{
+    
+    viewControlller.title = title;
+    viewControlller.tabBarItem.image = [UIImage imageNamed:imageName];
+    viewControlller.tabBarItem.selectedImage = [UIImage imageNamed:selectedName];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewControlller];
+    //    viewControlller.hidesBottomBarWhenPushed = YES;
+    [self addChildViewController:navigationController];
+    
+    [_customTabBar customTaBarWithTabBarItem:viewControlller.tabBarItem];
+}
+
+#pragma mark -  进行自己tabbar上面的item的删除
 - (void) viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:animated];
@@ -66,24 +84,23 @@
     [self.tabBar addSubview:_customTabBar];
     
 }
-
+#pragma mark - 自定义tabbar中的代理事件
 - (void)customTabBar:(YRCustomTabBar *)customTabBar fromSelectButton:(NSInteger)fromButon toButton:(NSInteger)toButton{
 
     self.selectedIndex = toButton;
 }
 
-- (void) viewController:(UIViewController *)viewControlller title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedName{
-    
-    viewControlller.title = title;
-    viewControlller.tabBarItem.image = [UIImage imageNamed:imageName];
-    viewControlller.tabBarItem.selectedImage = [UIImage imageNamed:selectedName];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewControlller];
-    
-    [self addChildViewController:navigationController];
-    
-    [_customTabBar customTaBarWithTabBarItem:viewControlller.tabBarItem];
+// 为了照齐谁开启谁释放的规则就在这里进行dismiss
+- (void) customTabbar:(YRCustomTabBar *)customTabbar plusButtonDidClick:(UIButton *)plusButton{
+
+    YRSendChooseController *sendWeibo = [[YRSendChooseController alloc] init];
+    [self presentViewController:sendWeibo animated:YES completion:nil];
+    sendWeibo.delegate = self;
+
 }
+- (void)senderChooseControllerDidCancel{
 
-
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

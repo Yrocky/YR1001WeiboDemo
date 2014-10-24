@@ -8,14 +8,19 @@
 
 #import "YRHomeViewController.h"
 #import "YRStatusCell.h"
+#import "YRUser.h"
 #import "YRStatus.h"
 #import "YRStatusFrame.h"
 #import "CustomTitleButton.h"
 #import "MJExtension.h"
+#import "YRWeiboDataBase.h"
+//#import "YRSinaRequestDelegate.h"
+#import "YRStatusToolBar.h"
+#import "YRRCAButton.h"
+#import "YRUserViewController.h"
+#import "YRStatusTopView.h"
 
-
-
-@interface YRHomeViewController ()<SinaWeiboRequestDelegate,YRStatusCellDelegate>
+@interface YRHomeViewController ()<SinaWeiboRequestDelegate,YRStatusCellDelegate,YRStatusToolBarDelegate,YRStatusTopViewDelegate>
 
 @property (nonatomic ,retain) UIImageView *rightImageView;
 
@@ -37,11 +42,29 @@
     /**
      *   进行一个懒加载
      */
-    if (_statusFrameArray == nil) {
+    if (!_statusFrameArray) {
         _statusFrameArray = [NSMutableArray array];
     }
     return _statusFrameArray;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    // 这里是进行数据库的值的判断,
+//    NSArray *array = [[YRWeiboDataBase shareWeiboDataBase] queryTimeLinesFromDataBase];
+//    _statusListArray = [YRStatus objectArrayWithKeyValuesArray:array];
+//    if (_statusListArray == nil) {
+//        [self requestWeiboData];
+//    }
+//    _userInfoDict = [[YRWeiboDataBase shareWeiboDataBase] queryUserInfoFromDataBaseFromUserId:@""];
+//    if (_userInfoDict == nil) {
+////        [self requestWeiboData];
+//    }
+    
+//    self.navigationController.tabBarController.tabBar.hidden = NO;
+}
+
 
 
 - (void)viewDidLoad
@@ -59,6 +82,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
     
+//    self.hidesBottomBarWhenPushed = YES;
 }
 
 
@@ -150,11 +174,7 @@
     }
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
 
-    [_rightImageView removeFromSuperview];
-    [_titleImageView removeFromSuperview];
-}
 
 #pragma  mark - UITableViewContoller delegate
 
@@ -167,15 +187,19 @@
 
     // 这里使用cell的一个方法，返回一个封装好的cell
     YRStatusCell *cell = [YRStatusCell creatCellWithTableView:tableView];
-    
+    cell.delegate = self;
     cell.statusFrame = _statusFrameArray[indexPath.row];
-    
+    cell.statusToolbar.delegate = self;
     return cell;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     return [_statusFrameArray[indexPath.row] cellHeight];
+}
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    
 }
 
 #pragma mark - refresh控制器的方法
@@ -209,28 +233,30 @@
     [appDelegate.sinaWeibo requestWithURL:@"users/show.json" params:[NSMutableDictionary dictionaryWithObject:appDelegate.sinaWeibo.userID forKey:@"uid"] httpMethod:@"GET" delegate:self];
 }
 
-#pragma mark - sinaWeiboResquestDelegate
+#pragma mark - sinaWeiboResquestDelegate的通知方法
 /**
  *  当加载完数据的时候在这里进行调用，接收返回的数据
  *
  */
 - (void)request:(SinaWeiboRequest *)request didFinishLoadingWithResult:(id)result{
+    
+    // 请求的语句
+    NSString *requestUrl = request.url;
 
     /**
      *  将加载控件关闭，并且进行数据的采集
      */
-    NSString *urlString = request.url;
-    
-    if ([urlString isEqualToString:@"https://open.weibo.cn/2/statuses/home_timeline.json"]) {//微博列表
+    if ([requestUrl isEqualToString:@"https://open.weibo.cn/2/statuses/home_timeline.json"]) {//微博列表
         
-//        _statusListArray = [result valueForKey:@"statuses"];// 以前的方法
-        // 使用第三方库将一个字典里面的键值对赋值给模型里面的属性,这中间不用进行其他修改,现在_statusListArray数组里面装是模型数据
         _statusListArray = [YRStatus objectArrayWithKeyValuesArray:[result valueForKey:@"statuses"]];
-//        [self loadData];
+        
+#warning 这里肯定会出错，因为写的是两个不同的方法，
+//        [[YRWeiboDataBase shareWeiboDataBase] saveTimeLinesToDataBase:[result valueForKey:@"statuses"]];
         
         NSMutableArray *statusFrameArray = [NSMutableArray array];
         
-        for (YRStatus *status in _statusListArray) {// 从装有模型的数组中取出模型记性frame模型的属性分配，然后使用frame数组装载frame模型，然后进行数据的展示
+        // 从装有模型的数组中取出模型进行frame模型的属性分配，然后使用frame数组装载frame模型，然后进行数据的展示
+        for (YRStatus *status in _statusListArray) {
             
             YRStatusFrame *statusFrame = [[YRStatusFrame alloc] init];
             
@@ -246,34 +272,15 @@
         self.statusFrameArray = tmpArray;
 
         [self.tableView reloadData];
-        /*
-         // 将字典数组转为模型数组(里面放的就是IWStatus模型)
-         NSArray *statusArray = [IWStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
-         
-         // 创建frame模型对象
-         NSMutableArray *statusFrameArray = [NSMutableArray array];
-         
-         for (IWStatus *status in statusArray) {
-             
-             IWStatusFrame *statusFrame = [[IWStatusFrame alloc] init];
-             // 传递微博模型数据
-             
-             statusFrame.status = status;
-             
-             [statusFrameArray addObject:statusFrame];
-         }
-         
-         // 赋值
-         self.statusFrames = statusFrameArray;
-         
-
-         */
         
         [self showNewStatusCount:statusFrameArray.count];
     
-    }else if([urlString isEqualToString:@"https://open.weibo.cn/2/users/show.json"]){//用户信息
+    }else if([requestUrl isEqualToString:@"https://open.weibo.cn/2/users/show.json"]){//用户信息
         
         _userInfoDict = (NSDictionary *)result;// 获得加载返回的数据,有json事例看到是个字典
+        
+#warning 这里也一样，可能会出错
+//        [[YRWeiboDataBase shareWeiboDataBase] saveUserInfoToDataBase:_userInfoDict withStatusID:nil];
         
         NSString *screen_name = [_userInfoDict objectForKey:@"screen_name"];
         UIButton *titleView = (UIButton *)self.navigationItem.titleView;
@@ -281,12 +288,14 @@
         [titleView setTitle:screen_name forState:UIControlStateNormal];
         [titleView setTitle:screen_name forState:UIControlStateHighlighted];
     }else{
-        NSLog(@"不是上面两个请求的任何一个，怎么可能,绝壁有错误出现");
+
+        return;
     }
     [_refresh endRefreshing];
     NSLog(@"endRefreshing");
 }
 
+#pragma mark - 加载提示
 
 - (void) showNewStatusCount:(int) count{
     
@@ -325,6 +334,35 @@
         
     }];
 }
+
+#pragma mark - 点击头像的代理方法
+- (void)statusIconDidClick:(YRStatusCell *)statusCell{
+    
+    YRUserViewController *userVC = [[YRUserViewController alloc] init];
+
+    userVC.starusFrame = statusCell.statusFrame;
+    
+    [self.navigationController pushViewController:userVC animated:YES];
+    
+}
+
+
+#pragma mark - 转发评论点赞按钮的代理事件 
+
+/** 转发按钮被点击 */
+- (void) statusToolBar:(YRStatusToolBar *)statusToolBar repostsButtonDidClick:(YRRCAButton *)reposts{
+
+    NSLog(@"进入转发页面");
+}
+/** 评论按钮被点击 */
+- (void)statusToolBar:(YRStatusToolBar *)statusToolBar commentsButtonDidClick:(YRRCAButton *)comments{
+    NSLog(@"进入评论页面");
+}
+
+- (void)statusToolBar:(YRStatusToolBar *)statusToolBar attitudesButtonDidClick:(YRRCAButton *)attitudes{
+
+}
+
 
 
 @end
