@@ -7,6 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+<<<<<<< HEAD
+=======
+/**  微博正文上面的一些设定
+*
+*/
+#define kGarp 6.18
+#define kAvatarLargeWH 30
+#define kScreenNameHeight 20
+#define kContentH 15
+
+#define kTextW (320 - 2 * kGarp)
+
+>>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
 @class YRStatus;
 
 @interface YRStatusFrame : NSObject
