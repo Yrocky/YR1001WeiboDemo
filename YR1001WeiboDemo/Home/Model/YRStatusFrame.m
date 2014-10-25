@@ -9,10 +9,7 @@
 #import "YRStatusFrame.h"
 #import "YRStatus.h"
 #import "YRUser.h"
-<<<<<<< HEAD
 #import "YRPhotosView.h"
-
-=======
 
 
 
@@ -26,7 +23,6 @@
 #define kThumbnailPicWH 80
 
 
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
 @interface YRStatusFrame  ()
 @property (nonatomic ,assign) CGRect lastRect;
 @end
@@ -57,11 +53,7 @@
     
     // 3. 姓名
     CGFloat nameX = CGRectGetMaxX(_iconViewF) + kGarp;
-<<<<<<< HEAD
     CGFloat nameY = iconY;
-=======
-    CGFloat nameY = iconH;
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
     CGFloat nameH = kScreenNameHeight;
     CGSize nameSize = CGSizeMake(MAXFLOAT, nameH);
     CGFloat nameW = [_status.user.name sizeWithFont:kScreenNameFont maxSize:nameSize].width;
@@ -70,11 +62,7 @@
     // 4. 会员图标
     if (_status.user.mbtype) {
         CGFloat vipX = CGRectGetMaxX(_nameLabelF) + kGarp;
-<<<<<<< HEAD
         CGFloat vipY = nameY;
-=======
-        CGFloat vipY = nameH;
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
         CGFloat vipW = 14;
         CGFloat vipH = nameH;
         _vipViewF = CGRectMake(vipX, vipY, vipW, vipH);
@@ -82,11 +70,8 @@
     
     }
     
-<<<<<<< HEAD
+
     // 5. 发送时间, 由于时间只算过一次，所以当一定时间过后，由于时间是会增加的，但是frame没有增加，导致一定的frame内不能完全显示时间变长的文字，
-=======
-    // 5. 发送时间
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
     CGFloat timeX = nameX;
     CGFloat timeY = CGRectGetMaxY(_nameLabelF) + kGarp;
     CGFloat timeH = kContentH;
@@ -107,7 +92,6 @@
     CGFloat contentY = CGRectGetMaxY(_iconViewF) + kGarp;
     CGFloat contentW = kTextW;
     CGSize contentSize = CGSizeMake(contentW, MAXFLOAT);
-<<<<<<< HEAD
     CGFloat contentH = [_status.text sizeWithFont:kTextFont maxSize:contentSize].height;
     _contentLabelF = CGRectMake(contentX, contentY, contentW, contentH + kGarp);
     
@@ -118,25 +102,13 @@
         CGFloat photoY = CGRectGetMaxY(_contentLabelF) ;
         CGSize photoSize = [YRPhotosView photoViewWithPhoutCount:_status.pic_urls.count];
         _photoViewF = (CGRect){photoX,photoY,photoSize};
-=======
-    CGFloat contentH = [_status.text sizeWithFont:kTextFont maxSize:contentSize].width;
-    _contentLabelF = CGRectMake(contentX, contentY, contentW, contentH);
-    
-    // 8. 微博图片
-    if (_status.thumbnail_pic) {
-        
-        CGFloat photoX = contentX;
-        CGFloat photoY = CGRectGetMaxY(_contentLabelF) + kGarp;
-        CGFloat photoWH = kThumbnailPicWH;
-        _photoViewF = CGRectMake(photoX, photoY, photoWH, photoWH);
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
     }
     
     // 9. 转发微博
     if (_status.retweeted_status) {
         
         // 10.转发微博的底部视图
-<<<<<<< HEAD
+
         CGFloat retweetedViewX = - kGarp;
         CGFloat retweetedViewY = CGRectGetMaxY(_contentLabelF) ;
         CGFloat retweetedViewW = contentW + 3 * kGarp;
@@ -149,21 +121,7 @@
         CGSize retweetSize = CGSizeMake(MAXFLOAT, retweetNameH);
         NSString *retweetName = [NSString stringWithFormat:@"%@",_status.retweeted_status.user.name];
         CGFloat retweetNameW = [retweetName sizeWithFont:kTextFont maxSize:retweetSize].width;
-=======
-        CGFloat retweetedViewX = contentX;
-        CGFloat retweetedViewY = CGRectGetMaxY(_contentLabelF) + kGarp;
-        CGFloat retweetedViewW = contentW;
-        CGFloat retweetedViewH = 0;// 待算
-        _retweetViewF = CGRectMake(retweetedViewX, retweetedViewY, retweetedViewW, retweetedViewH);
-        
-        // 11. 转发微博的用户名称
-        CGFloat retweetNameX = contentX;
-        CGFloat retweetNameY = CGRectGetMaxY(_contentLabelF) + kGarp;
-        CGFloat retweetNameH = kScreenNameHeight;
-        CGSize retweetSize = CGSizeMake(MAXFLOAT, retweetNameH);
-        NSString *name = [NSString stringWithFormat:@"@%@",_status.retweeted_status.user.name];
-        CGFloat retweetNameW = [name sizeWithFont:kTextFont maxSize:retweetSize].width;
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
+
         _retweetNameLabelF = CGRectMake(retweetNameX, retweetNameY, retweetNameW, retweetNameH);
         
         // 12. 转发微博的内容
@@ -175,7 +133,6 @@
         _retweetContentLabelF = CGRectMake(retweetContentX, retweetContentY, retweetContentW, retweetContentH);
         
         // 13. 转发微博的图片
-<<<<<<< HEAD
         if (_status.retweeted_status.pic_urls.count) {
             
             CGFloat retweetPhotoX = retweetContentX + kGarp;
@@ -197,28 +154,6 @@
         if (!_status.pic_urls.count) {// 无图
             topH = CGRectGetMaxY(_contentLabelF) ;
         }else{// 有图
-=======
-        if (_status.retweeted_status.thumbnail_pic) {
-            CGFloat retweetPhotoX = retweetContentX;
-            CGFloat retweetPhotoY = CGRectGetMaxY(_retweetContentLabelF) + kGarp;
-            CGFloat retweetPhotoWH = kThumbnailPicWH;
-            _retweetPhotoViewF = CGRectMake(retweetPhotoX, retweetPhotoY, retweetPhotoWH, retweetPhotoWH);
-            
-            retweetedViewY = CGRectGetMaxY(_retweetPhotoViewF) + kGarp;
-        }else{
-            
-            retweetedViewY = CGRectGetMaxY(_retweetContentLabelF) + kGarp;
-        }
-        
-        _retweetViewF = CGRectMake(retweetedViewX, retweetedViewY, retweetedViewW, retweetedViewH);
-        
-        topH = CGRectGetMaxY(_retweetViewF) + kGarp;
-        
-    }else{
-        if (!_status.thumbnail_pic) {
-            topH = CGRectGetMaxY(_contentLabelF) + kGarp;
-        }else{
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
             topH = CGRectGetMaxY(_photoViewF) + kGarp;
         }
     }
@@ -226,25 +161,14 @@
     _topViewF = CGRectMake(topX, topY, topW, topH);
     
     // 14.底部按钮父视图
-<<<<<<< HEAD
     CGFloat statusToolbarX = -3;
     CGFloat statusToolbarY = CGRectGetMaxY(_topViewF) ;
     CGFloat statusToolbarW = cellW + 6;
     CGFloat statusToolbarH = 30;
-=======
-    CGFloat statusToolbarX = 0;
-    CGFloat statusToolbarY = CGRectGetMaxY(_topViewF);
-    CGFloat statusToolbarW = cellW;
-    CGFloat statusToolbarH = 35;
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
     _statusToolbarF = CGRectMake(statusToolbarX, statusToolbarY, statusToolbarW, statusToolbarH);
     
     _cellHeight = CGRectGetMaxY(_statusToolbarF) + kGarp;
     
-<<<<<<< HEAD
-=======
-
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
 }
 /*
 - (void) subViewsFrame{

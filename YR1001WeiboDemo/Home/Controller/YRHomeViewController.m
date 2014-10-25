@@ -258,7 +258,7 @@
 #warning 这里肯定会出错，因为写的是两个不同的方法，
 //        [[YRWeiboDataBase shareWeiboDataBase] saveTimeLinesToDataBase:[result valueForKey:@"statuses"]];
         
-<<<<<<< HEAD
+
         NSMutableArray *statusFrameArray = [NSMutableArray array];
         
         // 从装有模型的数组中取出模型进行frame模型的属性分配，然后使用frame数组装载frame模型，然后进行数据的展示
@@ -276,13 +276,6 @@
         [tmpArray addObjectsFromArray:statusFrameArray];
         [tmpArray addObjectsFromArray:self.statusFrameArray];
         self.statusFrameArray = tmpArray;
-=======
-//        _statusListArray = [result valueForKey:@"statuses"];// 以前的方法
-        // 使用第三方库将一个字典里面的键值对赋值给模型里面的属性,这中间不用进行其他修改,现在_statusListArray数组里面装是模型数据
-        _statusListArray = [NSArray array];
-        _statusListArray = [YRStatus objectArrayWithKeyValuesArray:[result valueForKey:@"statuses"]];
-        [self loadData];
->>>>>>> 507b00af1ed0eef6f214786700a07402054c438f
 
         [self.tableView reloadData];
         
